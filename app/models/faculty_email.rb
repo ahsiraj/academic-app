@@ -1,0 +1,2 @@
+class FacultyEmail < ApplicationRecord
+end
