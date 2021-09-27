@@ -1,0 +1,2 @@
+class StaffAdvisor < ApplicationRecord
+end

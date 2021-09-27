@@ -1,2 +1,0 @@
-class Stuent < ApplicationRecord
-end

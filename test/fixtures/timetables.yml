@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  code: MyString
-  name: MyString
-  type: 
+  day: MyString
+  slot: 1
+  subject: MyString
 
 two:
-  code: MyString
-  name: MyString
-  type: 
+  day: MyString
+  slot: 1
+  subject: MyString

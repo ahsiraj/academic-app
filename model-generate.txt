@@ -1,0 +1,19 @@
+rails g model Subject id:integer code:string name:string type:string
+rails g model Faculty_email name:string email:string
+rails g model Faculty id:integer name:string email:string password_digest:string subject:string
+rails g model Timetable day:string slot:integer subject:string
+rails g model Attendance date:date slot:integer subject:string student:integer
+rails g model TimeSlot id:integer slot:integer from:time to:time
+rails g model StaffAdvisor name:string email:string password_digest:string
+rails g model StudentEmail name:string email:string
+rails g model Student id:integer name:string email:string password_digest:string subject1:string subject2:string subject3:string elective1:string elective2:string
+
+
+rails d model Student id:integer name:string email:string password_digest:string subject1:string subject2:string subject3:string elective1:string elective2:string
+rails g model Student name:string email:string password_digest:string subject1:string subject2:string subject3:string elective1:string elective2:string
+rails d model TimeSlot id:integer slot:integer from:time to:time
+rails g model TimeSlot slot:integer from:time to:time
+rails d model Faculty id:integer name:string email:string password_digest:string subject:string
+rails g model Faculty name:string email:string password_digest:string subject:string
+rails d model Subject id:integer code:string name:string type:string
+rails g model Subject code:string name:string type:string
