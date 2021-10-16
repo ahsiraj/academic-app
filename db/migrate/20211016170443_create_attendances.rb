@@ -3,8 +3,8 @@ class CreateAttendances < ActiveRecord::Migration[6.1]
     create_table :attendances do |t|
       t.date :date
       t.integer :slot
-      t.string :subject
-      t.integer :student
+      t.integer :subject_id
+      t.integer :student_id
 
       t.timestamps
     end

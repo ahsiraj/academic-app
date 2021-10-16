@@ -3,9 +3,9 @@
 one:
   day: MyString
   slot: 1
-  subject: MyString
+  subject_id: 1
 
 two:
   day: MyString
   slot: 1
-  subject: MyString
+  subject_id: 1

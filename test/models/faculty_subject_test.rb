@@ -1,6 +1,6 @@
 require "test_helper"
 
-class FacultyEmailTest < ActiveSupport::TestCase
+class FacultySubjectTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,0 +1,88 @@
+# installation steps cec
+
+$ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+$ rbenv install 3.0.2
+$ rbenv global 3.0.2
+$ gem install bundler
+$ rbenv rehash
+======================================================
+
+ask@mxcec:~/lite/academic-app
+$ rbenv version
+    rbenv: version `ruby-3.0.2' is not installed (set by /home/ask/lite/academic-app/.ruby-version)
+
+ask@mxcec:~/lite/academic-app
+$ curl -sL https://deb.nodesource.com/setup_12.x | sudo 'http_proxy=http://192.168.0.2:3128' -E bash -
+
+
+$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    OK
+
+$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    deb https://dl.yarnpkg.com/debian/ stable main
+
+
+$ sudo 'http_proxy=http://192.168.0.2:3128' apt update
+
+$ sudo 'http_proxy=http://192.168.0.2:3128' apt-get install git-core zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn
+
+$ which rufo
+    /home/ask/.rbenv/shims/rufo
+
+$ gem install rails pg --user-install
+==================================================================================
+
+$ sudo service postgresql start
+    [ ok ] Starting PostgreSQL 11 database server: main.
+
+$ sudo -i -u postgres
+postgres@mxcec:~$ psql
+    psql (11.13 (Debian 11.13-0+deb10u1))
+postgres=# alter user postgres password 'kk123';
+
+$  gem install rails pg --user-install
+
+                    WARNING:  You don't have /home/ask/.gem/ruby/3.0.0/bin in your PATH, --- corrected
+
+$ exec $SHELL
+
+$ export http_proxy=http://192.168.0.2:3128
+$ export https_proxy=$http_proxy
+$ bundle install
+
+$ rails s
+===================================================
+
+
+
+
+
+=====history=======
+  461  cd
+  464  sudo 'http_proxy=http://192.168.0.2:3128' apt update
+  466  sudo 'http_proxy=http://192.168.0.2:3128' apt install software-properties-common apt-transport-https curl
+  467  sudo 'http_proxy=http://192.168.0.2:3128' apt autoremove
+  468  sudo 'http_proxy=http://192.168.0.2:3128' apt install software-properties-common apt-transport-https curl
+  469  curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+  470  sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+  471  sudo apt update
+  472  sudo 'http_proxy=http://192.168.0.2:3128' apt update
+  473  sudo 'http_proxy=http://192.168.0.2:3128' apt install code
+  478  sudo 'http_proxy=http://192.168.0.2:3128' apt update
+  491  cd lite
+  492  cd academic-app/
+  494  code .
+  506  gem install rufo --user-install
+  507  rbenv
+  508  rbenv version
+  509  rbenv versions
+  510  curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+  511  curl -sL https://deb.nodesource.com/setup_12.x | sudo 'http_proxy=http://192.168.0.2:3128' -E bash -
+  512  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  513  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  514  sudo apt-get update
+  515  sudo 'http_proxy=http://192.168.0.2:3128' apt update
+  517  sudo 'http_proxy=http://192.168.0.2:3128' apt-get install git-core zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn
+  519  which rufo
+  525  gem install rails pg --user-install

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_27_045000) do
+ActiveRecord::Schema.define(version: 2021_10_16_170504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,52 +18,22 @@ ActiveRecord::Schema.define(version: 2021_09_27_045000) do
   create_table "attendances", force: :cascade do |t|
     t.date "date"
     t.integer "slot"
-    t.string "subject"
-    t.integer "student"
+    t.integer "subject_id"
+    t.integer "student_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "faculties", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.string "subject"
+  create_table "faculty_subjects", force: :cascade do |t|
+    t.integer "faculty_id"
+    t.integer "subject_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "faculty_emails", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "staff_advisors", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "student_emails", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "students", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.string "subject1"
-    t.string "subject2"
-    t.string "subject3"
-    t.string "elective1"
-    t.string "elective2"
+  create_table "student_subjects", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "subject_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -87,27 +57,18 @@ ActiveRecord::Schema.define(version: 2021_09_27_045000) do
   create_table "timetables", force: :cascade do |t|
     t.string "day"
     t.integer "slot"
-    t.string "subject"
+    t.integer "subject_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "todos", force: :cascade do |t|
-    t.text "todo_text"
-    t.date "due_date"
-    t.boolean "completed"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "email"
+    t.string "password_digest"
+    t.integer "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
-    t.string "first_name"
-    t.string "last_name"
   end
 
 end
