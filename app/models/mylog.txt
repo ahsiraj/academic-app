@@ -1,0 +1,4 @@
+user role using enum 17/10/21
+https://stackoverflow.com/questions/24479839/multiple-types-of-users-on-ruby-on-rails/24480937
+
+j
