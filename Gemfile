@@ -58,3 +58,7 @@ gem "pg", "~> 1.2"
 
 #ask
 #gem "rexml"
+#19.x.21
+gem "activeadmin"
+
+gem "devise", "~> 4.8"

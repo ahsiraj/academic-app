@@ -1,4 +1,116 @@
 user role using enum 17/10/21
 https://stackoverflow.com/questions/24479839/multiple-types-of-users-on-ruby-on-rails/24480937
 
-j
+19/10
+https://activeadmin.info/documentation.html
+Gemfile edited to include gem "activeadmin"
+$ bundle update # may be bundle install better
+$ rails g active_admin:install
+------>devise error
+$ bundle add devise
+$ rails g active_admin:install User
+Running via Spring preloader in process 90441
+      invoke  devise
+    generate    devise:install
+      create    config/initializers/devise.rb
+      create    config/locales/devise.en.yml
+  ===============================================================================
+
+Depending on your application's configuration some manual setup may be required:
+
+  1. Ensure you have defined default url options in your environments files. Here
+     is an example of default_url_options appropriate for a development environment
+     in config/environments/development.rb:
+
+       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+     In production, :host should be set to the actual host of your application.
+
+     * Required for all applications. *
+
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.
+     For example:
+
+       root to: "home#index"
+
+     * Not required for API-only Applications *
+
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+     For example:
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+     * Not required for API-only Applications *
+
+  4. You can copy Devise views (for customization) to your app by running:
+
+       rails g devise:views
+
+     * Not required *
+
+===============================================================================
+      invoke    active_record
+      create      db/migrate/20211019073105_add_devise_to_users.rb
+      insert      app/models/user.rb
+       route    devise_for :users
+        gsub    app/models/user.rb
+        gsub    config/routes.rb
+      append    db/seeds.rb
+      create  config/initializers/active_admin.rb
+      create  app/admin
+      create  app/admin/dashboard.rb
+      create  app/admin/users.rb
+      insert  config/routes.rb
+    generate  active_admin:assets
+       rails  generate active_admin:assets
+Running via Spring preloader in process 90463
+      create  app/assets/javascripts/active_admin.js
+      create  app/assets/stylesheets/active_admin.scss
+      create  db/migrate/20211019073111_create_active_admin_comments.rb
+[ask@yoga academic-app]$
+
+
+-0-0-0-0-0
+restarted rails s
+migrations pending error for links
+[ask@yoga academic-app]$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Gemfile
+	modified:   Gemfile.lock
+	modified:   app/models/mylog.txt
+	modified:   app/models/user.rb
+	modified:   config/routes.rb
+	modified:   db/seeds.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app/admin/
+	app/assets/javascripts/
+	app/assets/stylesheets/active_admin.scss
+	config/initializers/active_admin.rb
+	config/initializers/devise.rb
+	config/locales/devise.en.yml
+	db/migrate/20211019073105_add_devise_to_users.rb
+	db/migrate/20211019073111_create_active_admin_comments.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[ask@yoga academic-app]$
+
+[ask@yoga academic-app]$ rails db:migrate
+error as email already exists.
+So new migration file edited to remove email line
+[ask@yoga academic-app]$ rails db:migrate #ok Now
+web links working Now
+http://localhost:3000/admin/login page working
+created new user from console
+User.create :email => 'abc1@example.com', :password => 'password', :password_confirmation => 'password'
+
+Logged in from dasboard. Edited it to change un and pw.
+Now, user db which was modified has two types of paswords.
+Going to delete password_digest
