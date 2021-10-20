@@ -75,3 +75,32 @@ total 28
 -rw-r--r-- 1 ask ask 240 Oct 16 22:34 20211016170443_create_attendances.rb
 -rw-r--r-- 1 ask ask 208 Oct 16 22:34 20211016170452_create_faculty_subjects.rb
 -rw-r--r-- 1 ask ask 208 Oct 16 22:35 20211016170504_create_student_subjects.rb
+
+19/10 after active admin invoke
+-rw-r--r-- 1 ask ask  200 Oct 15 16:57 20210927045000_create_subjects.rb
+-rw-r--r-- 1 ask ask  198 Oct 15 16:57 20210927044817_create_time_slots.rb
+-rw-r--r-- 1 ask ask  228 Oct 16 20:38 20211016150840_create_users.rb
+-rw-r--r-- 1 ask ask  211 Oct 16 22:34 20211016170418_create_timetables.rb
+-rw-r--r-- 1 ask ask  240 Oct 16 22:34 20211016170443_create_attendances.rb
+-rw-r--r-- 1 ask ask  208 Oct 16 22:34 20211016170452_create_faculty_subjects.rb
+-rw-r--r-- 1 ask ask  208 Oct 16 22:35 20211016170504_create_student_subjects.rb
+-rw-r--r-- 1 ask ask  414 Oct 19 13:01 20211019073111_create_active_admin_comments.rb
+-rw-r--r-- 1 ask ask 1749 Oct 19 13:14 20211019073105_add_devise_to_users.rb
+
+
+Then
+rails g migration RemovePasswordDigestFromUsers password_digest:string
+
+
+[ask@yoga migrate]$ ll -tr
+total 40
+-rw-r--r-- 1 ask ask  200 Oct 15 16:57 20210927045000_create_subjects.rb
+-rw-r--r-- 1 ask ask  198 Oct 15 16:57 20210927044817_create_time_slots.rb
+-rw-r--r-- 1 ask ask  228 Oct 16 20:38 20211016150840_create_users.rb
+-rw-r--r-- 1 ask ask  211 Oct 16 22:34 20211016170418_create_timetables.rb
+-rw-r--r-- 1 ask ask  240 Oct 16 22:34 20211016170443_create_attendances.rb
+-rw-r--r-- 1 ask ask  208 Oct 16 22:34 20211016170452_create_faculty_subjects.rb
+-rw-r--r-- 1 ask ask  208 Oct 16 22:35 20211016170504_create_student_subjects.rb
+-rw-r--r-- 1 ask ask  414 Oct 19 13:01 20211019073111_create_active_admin_comments.rb
+-rw-r--r-- 1 ask ask 1749 Oct 19 13:14 20211019073105_add_devise_to_users.rb
+-rw-r--r-- 1 ask ask  142 Oct 19 21:47 20211019161738_remove_password_digest_from_users.rb

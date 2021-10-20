@@ -73,7 +73,7 @@ Running via Spring preloader in process 90463
 
 -0-0-0-0-0
 restarted rails s
-migrations pending error for links
+migrations pending error for web links
 [ask@yoga academic-app]$ git status
 On branch master
 Your branch is up to date with 'origin/master'.
@@ -114,3 +114,82 @@ User.create :email => 'abc1@example.com', :password => 'password', :password_con
 Logged in from dasboard. Edited it to change un and pw.
 Now, user db which was modified has two types of paswords.
 Going to delete password_digest
+$rails g migration RemovePasswordDigestFromUsers password_digest:string
+$ rails db:migrate
+> reload!
+
+
+
+
+[ask@yoga academic-app]$ rails g devise:views
+Running via Spring preloader in process 16695
+      invoke  Devise::Generators::SharedViewsGenerator
+      create    app/views/devise/shared
+      create    app/views/devise/shared/_error_messages.html.erb
+      create    app/views/devise/shared/_links.html.erb
+      invoke  form_for
+      create    app/views/devise/confirmations
+      create    app/views/devise/confirmations/new.html.erb
+      create    app/views/devise/passwords
+      create    app/views/devise/passwords/edit.html.erb
+      create    app/views/devise/passwords/new.html.erb
+      create    app/views/devise/registrations
+      create    app/views/devise/registrations/edit.html.erb
+      create    app/views/devise/registrations/new.html.erb
+      create    app/views/devise/sessions
+      create    app/views/devise/sessions/new.html.erb
+      create    app/views/devise/unlocks
+      create    app/views/devise/unlocks/new.html.erb
+      invoke  erb
+      create    app/views/devise/mailer
+      create    app/views/devise/mailer/confirmation_instructions.html.erb
+      create    app/views/devise/mailer/email_changed.html.erb
+      create    app/views/devise/mailer/password_change.html.erb
+      create    app/views/devise/mailer/reset_password_instructions.html.erb
+      create    app/views/devise/mailer/unlock_instructions.html.erb
+[ask@yoga academic-app]$
+20/10
+$ rails db:seed
+Nothing -- just the admin@example user is created.
+
+
+contents of app/admin/users.rb
+-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0
+ActiveAdmin.register User do
+  permit_params :email, :password, :password_confirmation
+
+  index do
+    selectable_column
+    id_column
+    column :email
+    column :current_sign_in_at
+    column :sign_in_count
+    column :created_at
+    actions
+  end
+
+  filter :email
+  filter :current_sign_in_at
+  filter :sign_in_count
+  filter :created_at
+
+  form do |f|
+    f.inputs do
+      f.input :email
+      f.input :password
+      f.input :password_confirmation
+    end
+    f.actions
+  end
+
+end
+-0-0-0-0-0-0-0-0-0-0
+
+abour to be over-0wriiten when
+[ask@yoga academic-app]$ rails generate active_admin:resource User
+Running via Spring preloader in process 21956
+    conflict  app/admin/users.rb
+Overwrite /home/ask/lite/academic-app/app/admin/users.rb? (enter "h" for help) [Ynaqdhm]
+
+
+Resultant view is okay(http://localhost:3000/admin/users)
