@@ -150,7 +150,7 @@ Running via Spring preloader in process 16695
 [ask@yoga academic-app]$
 20/10
 $ rails db:seed
-Nothing -- just the admin@example user is created.
+Nothing -- just the admin@example.com pw:assword  user is created.
 
 
 contents of app/admin/users.rb
@@ -186,10 +186,19 @@ end
 -0-0-0-0-0-0-0-0-0-0
 
 abour to be over-0wriiten when
-[ask@yoga academic-app]$ rails generate active_admin:resource User
+[ask@yoga academic-app]$ rails g active_admin:resource User
 Running via Spring preloader in process 21956
     conflict  app/admin/users.rb
 Overwrite /home/ask/lite/academic-app/app/admin/users.rb? (enter "h" for help) [Ynaqdhm]
 
 
 Resultant view is okay(http://localhost:3000/admin/users)
+
+But, authentication error when modifying via web
+ActiveModel::ForbiddenAttributesError in Admin::UsersController#update
+
+[ask@yoga academic-app]$ rails g active_admin:resource Subject
+Running via Spring preloader in process 35210
+      create  app/admin/subjects.rb
+[ask@yoga academic-app]$
+Edited above file
