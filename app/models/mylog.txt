@@ -150,7 +150,7 @@ Running via Spring preloader in process 16695
 [ask@yoga academic-app]$
 20/10
 $ rails db:seed
-Nothing -- just the admin@example.com pw:assword  user is created.
+Nothing -- just the admin@example.com pw:password  user is created.
 
 
 contents of app/admin/users.rb
@@ -202,3 +202,7 @@ Running via Spring preloader in process 35210
       create  app/admin/subjects.rb
 [ask@yoga academic-app]$
 Edited above file
+
+
+21/10 some more works
+https://www.youtube.com/watch?v=7v2EMmfBJL8

@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   root "academics#index"
   get "academics/index"
   get "academics", to: "academics#index"
+  #resources :user_session
+  get "/signin" => "sessions#new", as: :new_sessions
+  resources :users
+  resources :academics
 end
