@@ -86,3 +86,304 @@ $ rails s
   517  sudo 'http_proxy=http://192.168.0.2:3128' apt-get install git-core zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn
   519  which rufo
   525  gem install rails pg --user-install
+
+
+28/10 -  syncing with work at home
+  501  git status
+  502  git pull  -- error
+  504  rm connect_db.rb install.cec.txt kktest.rb
+  505  git pull -- error
+  506  git stash
+  507  git pull  -- ok
+
+  //based on following results it could be assessed that  "git stash" was wrong
+
+
+
+  $ rails -v
+Could not find puma-5.5.2, selenium-webdriver-4.0.0, webdrivers-4.7.0, activeadmin-2.9.0, devise-4.8.0, childprocess-4.1.0, arbre-1.4.0, formtastic-4.0.0, formtastic_i18n-0.7.0, inherited_resources-1.13.0, jquery-rails-4.4.0, kaminari-1.2.1, ransack-2.4.2, bcrypt-3.1.16, orm_adapter-0.5.0, responders-3.0.1, warden-1.2.9, ruby2_keywords-0.0.5, has_scope-0.8.0, kaminari-actionview-1.2.1, kaminari-activerecord-1.2.1, kaminari-core-1.2.1 in any of the sources
+Run `bundle install` to install missing gems.
+ask@mxcec:~/lite/academic-app
+$ bundle install
+Fetching gem metadata from https://rubygems.org/............
+Using rake 13.0.6
+Using concurrent-ruby 1.1.9
+Using erubi 1.10.0
+Using minitest 5.14.4
+Using crass 1.0.6
+Using rack 2.2.3
+Using racc 1.5.2
+Using websocket-extensions 0.1.5
+Using marcel 1.0.2
+Using nio4r 2.5.8
+Using builder 3.2.4
+Fetching ruby2_keywords 0.0.5
+Using mini_mime 1.1.2
+Using method_source 1.0.0
+Fetching formtastic_i18n 0.7.0
+Using zeitwerk 2.4.2
+Using thor 1.1.0
+Using public_suffix 4.0.6
+Fetching kaminari-core 1.2.1
+Fetching bcrypt 3.1.16
+Installing formtastic_i18n 0.7.0
+Installing ruby2_keywords 0.0.5
+Installing kaminari-core 1.2.1
+Installing bcrypt 3.1.16 with native extensions
+Using bindex 0.8.1
+Using msgpack 1.4.2
+Using bundler 2.2.29
+Using byebug 11.1.3
+Using regexp_parser 2.1.1
+Fetching childprocess 4.1.0
+Fetching orm_adapter 0.5.0
+Installing childprocess 4.1.0
+Using ffi 1.15.4
+Using rb-fsevent 0.11.0
+Using pg 1.2.3
+Using rexml 3.2.5
+Using rubyzip 2.3.2
+Using tilt 2.0.10
+Using semantic_range 3.0.0
+Using spring 3.0.0
+Using turbolinks-source 5.2.0
+Using i18n 1.8.10
+Using tzinfo 2.0.4
+Using rack-test 1.1.0
+Fetching warden 1.2.9
+Installing orm_adapter 0.5.0
+Installing warden 1.2.9
+Using rack-mini-profiler 2.3.3
+Using rack-proxy 0.7.0
+Using sprockets 4.0.2
+Using nokogiri 1.12.5 (x86_64-linux)
+Using websocket-driver 0.7.5
+Fetching puma 5.5.2
+Using mail 2.7.1
+Using addressable 2.8.0
+Using bootsnap 1.9.1
+Using rb-inotify 0.10.1
+Using sassc 2.4.0
+Using activesupport 6.1.4.1
+Using turbolinks 5.2.1
+Using loofah 2.12.0
+Using xpath 3.2.0
+Using listen 3.7.0
+Using rails-dom-testing 2.0.3
+Using rails-html-sanitizer 1.4.2
+Using globalid 0.5.2
+Using activemodel 6.1.4.1
+Fetching selenium-webdriver 4.0.0
+Fetching arbre 1.4.0
+Installing puma 5.5.2 with native extensions
+Installing arbre 1.4.0
+Installing selenium-webdriver 4.0.0
+Using jbuilder 2.11.2
+Using actionview 6.1.4.1
+Using activejob 6.1.4.1
+Using activerecord 6.1.4.1
+Using capybara 3.35.3
+Using actionpack 6.1.4.1
+Fetching kaminari-actionview 1.2.1
+Installing kaminari-actionview 1.2.1
+Fetching kaminari-activerecord 1.2.1
+Fetching ransack 2.4.2
+Installing kaminari-activerecord 1.2.1
+Using actioncable 6.1.4.1
+Using activestorage 6.1.4.1
+Using actionmailer 6.1.4.1
+Fetching formtastic 4.0.0
+Installing ransack 2.4.2
+Installing formtastic 4.0.0
+Fetching has_scope 0.8.0
+Using railties 6.1.4.1
+Using sprockets-rails 3.2.2
+Fetching webdrivers 4.7.0
+Installing has_scope 0.8.0
+Installing webdrivers 4.7.0
+Fetching kaminari 1.2.1
+Using actionmailbox 6.1.4.1
+Using actiontext 6.1.4.1
+Fetching responders 3.0.1
+Installing kaminari 1.2.1
+Installing responders 3.0.1
+Fetching jquery-rails 4.4.0
+Using web-console 4.1.0
+Using webpacker 5.4.3
+Using sassc-rails 2.1.2
+Using rails 6.1.4.1
+Fetching inherited_resources 1.13.0
+Installing inherited_resources 1.13.0
+Installing jquery-rails 4.4.0
+Using sass-rails 6.0.0
+Fetching activeadmin 2.9.0
+Installing activeadmin 2.9.0
+Fetching devise 4.8.0
+Installing devise 4.8.0
+Bundle complete! 19 Gemfile dependencies, 92 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+ask@mxcec:~/lite/academic-app
+$ rails s
+=> Booting Puma
+=> Rails 6.1.4.1 application starting in development
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 5.5.2 (ruby 3.0.2-p107) ("Zawgyi")
+*  Min threads: 5
+*  Max threads: 5
+*  Environment: development
+*          PID: 8938
+* Listening on http://127.0.0.1:3000
+* Listening on http://[::1]:3000
+Use Ctrl-C to stop
+
+
+
+$ rails db:migrate
+rails aborted!
+ActiveRecord::NoDatabaseError: FATAL:  database "academic_db" does not exist
+/home/ask/lite/academic-app/bin/rails:5:in `<top (required)>'
+/home/ask/lite/academic-app/bin/spring:10:in `block in <top (required)>'
+/home/ask/lite/academic-app/bin/spring:7:in `<top (required)>'
+
+Caused by:
+PG::ConnectionBad: FATAL:  database "academic_db" does not exist
+/home/ask/lite/academic-app/bin/rails:5:in `<top (required)>'
+/home/ask/lite/academic-app/bin/spring:10:in `block in <top (required)>'
+/home/ask/lite/academic-app/bin/spring:7:in `<top (required)>'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+ask@mxcec:~/lite/academic-app
+$ rails db:create:all
+Created database 'academic_db'
+Created database 'test_academic_db'
+Created database 'prod_academic_db'
+ask@mxcec:~/lite/academic-app
+$
+$ rails db:migrate
+== 20210927044817 CreateTimeSlots: migrating ==================================
+-- create_table(:time_slots)
+   -> 0.5654s
+== 20210927044817 CreateTimeSlots: migrated (0.5655s) =========================
+
+== 20210927045000 CreateSubjects: migrating ===================================
+-- create_table(:subjects)
+   -> 0.1522s
+== 20210927045000 CreateSubjects: migrated (0.1526s) ==========================
+
+== 20211016150840 CreateUsers: migrating ======================================
+-- create_table(:users)
+   -> 0.1707s
+== 20211016150840 CreateUsers: migrated (0.1711s) =============================
+
+== 20211016170418 CreateTimetables: migrating =================================
+-- create_table(:timetables)
+   -> 0.4224s
+== 20211016170418 CreateTimetables: migrated (0.4225s) ========================
+
+== 20211016170443 CreateAttendances: migrating ================================
+-- create_table(:attendances)
+   -> 0.2170s
+== 20211016170443 CreateAttendances: migrated (0.2171s) =======================
+
+== 20211016170452 CreateFacultySubjects: migrating ============================
+-- create_table(:faculty_subjects)
+   -> 0.0934s
+== 20211016170452 CreateFacultySubjects: migrated (0.0936s) ===================
+
+== 20211016170504 CreateStudentSubjects: migrating ============================
+-- create_table(:student_subjects)
+   -> 0.6558s
+== 20211016170504 CreateStudentSubjects: migrated (0.6559s) ===================
+
+== 20211019073105 AddDeviseToUsers: migrating =================================
+-- change_table(:users)
+   -> 0.0270s
+-- add_index(:users, :email, {:unique=>true})
+   -> 0.0771s
+-- add_index(:users, :reset_password_token, {:unique=>true})
+   -> 0.0750s
+== 20211019073105 AddDeviseToUsers: migrated (0.1989s) ========================
+
+== 20211019073111 CreateActiveAdminComments: migrating ========================
+-- create_table(:active_admin_comments)
+   -> 0.4297s
+-- add_index(:active_admin_comments, [:namespace])
+   -> 0.1000s
+== 20211019073111 CreateActiveAdminComments: migrated (0.5300s) ===============
+
+== 20211019161738 RemovePasswordDigestFromUsers: migrating ====================
+-- remove_column(:users, :password_digest, :string)
+   -> 0.0805s
+== 20211019161738 RemovePasswordDigestFromUsers: migrated (0.0807s) ===========
+
+ask@mxcec:~/lite/academic-app
+
+Web error on http://127.0.0.1:3000/academics
+Webpacker::Manifest::MissingEntryError in Academics#index
+trying
+ask@mxcec:~/lite/academic-app
+$ rails webpacker:install
+   identical  config/webpacker.yml
+Copying webpack core config
+       exist  config/webpack
+   identical  config/webpack/development.js
+   identical  config/webpack/environment.js
+   identical  config/webpack/production.js
+   identical  config/webpack/test.js
+Copying postcss.config.js to app root directory
+   identical  postcss.config.js
+Copying babel.config.js to app root directory
+   identical  babel.config.js
+Copying .browserslistrc to app root directory
+   identical  .browserslistrc
+The JavaScript app source directory already exists
+       apply  /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/webpacker-5.4.3/lib/install/binstubs.rb
+  Copying binstubs
+       exist    bin
+   identical    bin/webpack
+   identical    bin/webpack-dev-server
+File unchanged! The supplied flag value not found!  .gitignore
+Installing all JavaScript dependencies [5.4.3]
+         run  yarn add @rails/webpacker@5.4.3 from "."
+yarn add v1.22.15
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+info fsevents@2.3.2: The platform "linux" is incompatible with this module.
+info "fsevents@2.3.2" is an optional dependency and failed compatibility check. Excluding it from installation.
+info fsevents@1.2.13: The platform "linux" is incompatible with this module.
+info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation.
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved 0 new dependencies.
+Done in 107.70s.
+Installing webpack and webpack-cli as direct dependencies
+         run  yarn add webpack@^4.46.0 webpack-cli@^3.3.12 from "."
+yarn add v1.22.15
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+info fsevents@2.3.2: The platform "linux" is incompatible with this module.
+info "fsevents@2.3.2" is an optional dependency and failed compatibility check. Excluding it from installation.
+info fsevents@1.2.13: The platform "linux" is incompatible with this module.
+info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation.
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved 0 new dependencies.
+Done in 8.29s.
+Installing dev server for live reloading
+         run  yarn add --dev webpack-dev-server@^3 from "."
+yarn add v1.22.15
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+info fsevents@2.3.2: The platform "linux" is incompatible with this module.
+info "fsevents@2.3.2" is an optional dependency and failed compatibility check. Excluding it from installation.
+info fsevents@1.2.13: The platform "linux" is incompatible with this module.
+info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation.
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved 0 new dependencies.
+Done in 1.95s.
+Webpacker successfully installed 🎉 🍰
+ask@mxcec:~/lite/academic-app
+
+Resolved the error. Why??
