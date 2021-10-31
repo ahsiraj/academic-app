@@ -54,7 +54,11 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the application controller.
+
   config.authentication_method = :authenticate_user!
+
+  #ask 31/10 above line replaced by below line
+  #config.authentication_method = :authenticate_active_admin_user!
 
   # == User Authorization
   #
@@ -110,6 +114,9 @@ ActiveAdmin.setup do |config|
   #
   # Default:
   # config.logout_link_method = :get
+
+  #ask inserted 31/10
+  config.logout_link_method = :delete
 
   # == Root
   #
@@ -332,4 +339,7 @@ ActiveAdmin.setup do |config|
   # You can switch to using Webpacker here.
   #
   # config.use_webpacker = true
+
+  #ask 31/10
+  config.skip_before_action :authenticate_user!
 end
