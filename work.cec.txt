@@ -1,0 +1,160 @@
+$ git pull
+remote: Enumerating objects: 27, done.
+remote: Counting objects: 100% (27/27), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 14 (delta 10), reused 14 (delta 10), pack-reused 0
+Unpacking objects: 100% (14/14), done.
+From https://github.com/ahsiraj/academic-app
+805d901..97f6ba8 master -> origin/master
+Updating 805d901..97f6ba8
+Fast-forward
+app/models/user.rb | 8 +++++++-
+app/views/academics/index.html.erb | 2 +-
+app/views/layouts/application.html.erb | 18 ++++++++++++++----
+config/initializers/active_admin.rb | 10 ++++++++++
+config/routes.rb | 7 +++++--
+5 files changed, 37 insertions(+), 8 deletions(-)
+ask@mxcec:~/lite/academic-app
+$ date
+Mon 01 Nov 2021 09:09:52 AM IST
+ask@mxcec:~/lite/academic-app
+$ sudo service postgresql start
+[ ok ] Starting PostgreSQL 11 database server: main.
+ask@mxcec:~/lite/academic-app
+$ rails s
+=> Booting Puma
+=> Rails 6.1.4.1 application starting in development
+=> Run `bin/rails server --help` for more startup options
+Exiting
+/home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/callbacks.rb:707:in `block (2 levels) in skip_callback': Before process_action callback :authenticate_user! has not been defined (ArgumentError) from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/callbacks.rb:703:in `each'
+from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/callbacks.rb:703:in `block in skip_callback' from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/callbacks.rb:625:in `block in **update_callbacks'
+from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/callbacks.rb:623:in `reverse_each' from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/callbacks.rb:623:in `**update_callbacks'
+from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/callbacks.rb:702:in `skip_callback' from /home/ask/.gem/ruby/3.0.0/gems/actionpack-6.1.4.1/lib/abstract_controller/callbacks.rb:215:in `block (3 levels) in <module:ClassMethods>'
+from /home/ask/.gem/ruby/3.0.0/gems/actionpack-6.1.4.1/lib/abstract_controller/callbacks.rb:96:in `block in _insert_callbacks' from /home/ask/.gem/ruby/3.0.0/gems/actionpack-6.1.4.1/lib/abstract_controller/callbacks.rb:95:in `each'
+from /home/ask/.gem/ruby/3.0.0/gems/actionpack-6.1.4.1/lib/abstract_controller/callbacks.rb:95:in `_insert_callbacks' from /home/ask/.gem/ruby/3.0.0/gems/actionpack-6.1.4.1/lib/abstract_controller/callbacks.rb:214:in `block (2 levels) in <module:ClassMethods>'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activeadmin-2.9.0/lib/active_admin/application.rb:153:in `public_send' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activeadmin-2.9.0/lib/active_admin/application.rb:153:in `block (3 levels) in <class:Application>'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activeadmin-2.9.0/lib/active_admin/application.rb:152:in `each' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activeadmin-2.9.0/lib/active_admin/application.rb:152:in `block (2 levels) in <class:Application>'
+from /home/ask/lite/academic-app/config/initializers/active_admin.rb:344:in `block in <main>' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activeadmin-2.9.0/lib/active_admin.rb:67:in `setup'
+from /home/ask/lite/academic-app/config/initializers/active_admin.rb:1:in `<main>' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:60:in `load'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:60:in `load' from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/dependencies.rb:326:in `block in load'
+from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/dependencies.rb:299:in `load_dependency' from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/dependencies.rb:326:in `load'
+from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/engine.rb:681:in `block in load_config_initializer' from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/notifications.rb:205:in `instrument'
+from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/engine.rb:680:in `load_config_initializer' from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/engine.rb:634:in `block (2 levels) in <class:Engine>'
+from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/engine.rb:633:in `each' from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/engine.rb:633:in `block in <class:Engine>'
+from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/initializable.rb:32:in `instance_exec' from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/initializable.rb:32:in `run'
+from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/initializable.rb:61:in `block in run_initializers' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:228:in `block in tsort_each'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:422:in `block (2 levels) in each_strongly_connected_component_from'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:431:in `each_strongly_connected_component_from' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:421:in `block in each_strongly_connected_component_from'
+from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/initializable.rb:50:in `each' from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/initializable.rb:50:in `tsort_each_child'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:415:in `call' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:415:in `each_strongly_connected_component_from'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:349:in `block in each_strongly_connected_component' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:347:in `each'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:347:in `call' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:347:in `each_strongly_connected_component'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:226:in `tsort_each' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/tsort.rb:205:in `tsort_each'
+from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/initializable.rb:60:in `run_initializers' from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/application.rb:391:in `initialize!'
+from /home/ask/lite/academic-app/config/environment.rb:5:in `<main>' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+from /home/ask/.gem/ruby/3.0.0/gems/zeitwerk-2.4.2/lib/zeitwerk/kernel.rb:34:in `require' from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/dependencies.rb:332:in `block in require'
+from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/dependencies.rb:299:in `load_dependency' from /home/ask/.gem/ruby/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/dependencies.rb:332:in `require'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `require_relative' from config.ru:3:in `block in <main>'
+from /home/ask/.gem/ruby/3.0.0/gems/rack-2.2.3/lib/rack/builder.rb:116:in `eval' from /home/ask/.gem/ruby/3.0.0/gems/rack-2.2.3/lib/rack/builder.rb:116:in `new_from_string'
+from /home/ask/.gem/ruby/3.0.0/gems/rack-2.2.3/lib/rack/builder.rb:105:in `load_file' from /home/ask/.gem/ruby/3.0.0/gems/rack-2.2.3/lib/rack/builder.rb:66:in `parse_file'
+from /home/ask/.gem/ruby/3.0.0/gems/rack-2.2.3/lib/rack/server.rb:349:in `build_app_and_options_from_config' from /home/ask/.gem/ruby/3.0.0/gems/rack-2.2.3/lib/rack/server.rb:249:in `app'
+from /home/ask/.gem/ruby/3.0.0/gems/rack-2.2.3/lib/rack/server.rb:422:in `wrapped_app' from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/commands/server/server_command.rb:77:in `log_to_stdout'
+from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/commands/server/server_command.rb:37:in `start' from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/commands/server/server_command.rb:144:in `block in perform'
+from <internal:kernel>:90:in `tap' from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/commands/server/server_command.rb:135:in `perform'
+from /home/ask/.gem/ruby/3.0.0/gems/thor-1.1.0/lib/thor/command.rb:27:in `run' from /home/ask/.gem/ruby/3.0.0/gems/thor-1.1.0/lib/thor/invocation.rb:127:in `invoke_command'
+from /home/ask/.gem/ruby/3.0.0/gems/thor-1.1.0/lib/thor.rb:392:in `dispatch' from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/command/base.rb:69:in `perform'
+from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/command.rb:48:in `invoke' from /home/ask/.gem/ruby/3.0.0/gems/railties-6.1.4.1/lib/rails/commands.rb:18:in `<main>'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/bootsnap-1.9.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require' from /home/ask/lite/academic-app/bin/rails:5:in `<top (required)>'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/spring-3.0.0/lib/spring/client/rails.rb:28:in `load' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/spring-3.0.0/lib/spring/client/rails.rb:28:in `call'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/spring-3.0.0/lib/spring/client/command.rb:7:in `call' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/spring-3.0.0/lib/spring/client.rb:30:in `run'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/spring-3.0.0/bin/spring:49:in `<top (required)>' from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/spring-3.0.0/lib/spring/binstub.rb:11:in `load'
+from /home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/spring-3.0.0/lib/spring/binstub.rb:11:in `<top (required)>' from <internal:/home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/rubygems/core_ext/kernel_require.rb>:85:in `require'
+from <internal:/home/ask/.rbenv/versions/3.0.2/lib/ruby/3.0.0/rubygems/core_ext/kernel_require.rb>:85:in `require' from /home/ask/lite/academic-app/bin/spring:10:in `block in <top (required)>'
+from <internal:kernel>:90:in `tap' from /home/ask/lite/academic-app/bin/spring:7:in `<top (required)>'
+from bin/rails:2:in `load' from bin/rails:2:in `<main>'
+
+activeadmin.rb -- last line (shown below) commented out -
+#ask 31/10
+#config.skip_before_action :authenticate_user
+ask@mxcec:~/lite/academic-app
+$ rails s
+=> Booting Puma
+=> Rails 6.1.4.1 application starting in development
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+
+- Puma version: 5.5.2 (ruby 3.0.2-p107) ("Zawgyi")
+- Min threads: 5
+- Max threads: 5
+- Environment: development
+-          PID: 7561
+- Listening on http://127.0.0.1:3000
+- Listening on http://[::1]:3000
+  Use Ctrl-C to stop
+
+---
+seeds.rb
+# User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+#ask 1/11 cec cab(commented above line)
+User.create!(email: 'ask@ceconline.edu', password: 'passask', password_confirmation: 'passask') if Rails.env.development?
+$ rails db:seed
+---------
+routes.rb
+
+Rails.application.routes.draw do
+  devise_for :users, ActiveAdmin::Devise.config
+  --->
+Rails.application.routes.draw do
+  resources :users
+  devise_for :users, ActiveAdmin::Devise.config
+
+(To access users -- currently accessible only via admin)
+-------------------
+
+
+Routing information
+when routes.rb
+devise_for :users, ActiveAdmin::Devise.config
+...
+new_user_session_path 	GET 	/admin/login(.:format) active_admin/devise/sessions#new
+user_session_path 	POST 	/admin/login(.:format) active_admin/devise/sessions#create
+destroy_user_session_path 	DELETE 	/admin/logout(.:format) active_admin/devise/sessions#destroy
+new_user_password_path 	GET 	/admin/password/new(.:format) active_admin/devise/passwords#new
+edit_user_password_path 	GET 	/admin/password/edit(.:format) active_admin/devise/passwords#edit
+user_password_path 	PATCH 	/admin/password(.:format) active_admin/devise/passwords#update
+	                  PUT 	/admin/password(.:format) active_admin/devise/passwords#update
+	                  POST 	/admin/password(.:format) active_admin/devise/passwords#create
+admin_root_path 	GET 	/admin(.:format) admin/dashboard#index
+admin_dashboard_path 	GET 	/admin/dashboard(.:format) admin/dashboard#index
+batch_action_admin_subjects_path 	POST 	/admin/subjects/batch_action(.:format) admin/subjects#batch_action
+------
+when routes.rb
+devise_for :users
+new_user_session_path 	GET 	/users/sign_in(.:format) 	devise/sessions#new
+user_session_path 	POST 	/users/sign_in(.:format) 	devise/sessions#create
+destroy_user_session_path 	DELETE 	/users/sign_out(.:format) 	devise/sessions#destroy
+new_user_password_path 	GET 	/users/password/new(.:format) devise/passwords#new
+edit_user_password_path 	GET 	/users/password/edit(.:format) 	devise/passwords#edit
+user_password_path 	PATCH 	/users/password(.:format) 	devise/passwords#update
+	                  PUT 	/users/password(.:format) 	devise/passwords#update
+	                  POST 	/users/password(.:format) 	devise/passwords#create
+admin_root_path 	GET 	/admin(.:format) 	admin/dashboard#index
+admin_dashboard_path 	GET 	/admin/dashboard(.:format) 	admin/dashboard#index
+batch_action_admin_subjects_path 	POST 	/admin/subjects/batch_action(.:format) 	admin/subjects#batch_action
+---------
+with this routing /users/log_in is responeded with login screen if not already logged in
+
+
+with
+
+devise_for :users
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+in routes.rb
+users/sign_out also works!! progressing

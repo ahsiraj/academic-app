@@ -341,5 +341,5 @@ ActiveAdmin.setup do |config|
   # config.use_webpacker = true
 
   #ask 31/10
-  config.skip_before_action :authenticate_user!
+  #config.skip_before_action :authenticate_user!
 end
