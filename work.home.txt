@@ -1,0 +1,67 @@
+4/11/21
+[ask@yoga academic-app]$ rails s
+=> Booting Puma
+=> Rails 6.1.4.1 application starting in development
+=> Run `bin/rails server --help` for more startup options
+Exiting
+/home/ask/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-6.1.4.1/lib/active_support/callbacks.rb:707:in `block (2 levels) in skip_callback': Before process_action callback :authenticate_user! has not been defined (ArgumentError)
+.
+.
+.
+[ask@yoga config]$ cp routes.rb ~/app.back/ -p
+[ask@yoga config]$ cp -rp initializers ~/app.back/
+
+
+[ask@yoga academic-app]$ git pull
+remote: Enumerating objects: 26, done.
+remote: Counting objects: 100% (26/26), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 14 (delta 10), reused 14 (delta 10), pack-reused 0
+Unpacking objects: 100% (14/14), 4.03 KiB | 206.00 KiB/s, done.
+From https://github.com/ahsiraj/academic-app
+   97f6ba8..9d7dd3d  master     -> origin/master
+Updating 97f6ba8..9d7dd3d
+Fast-forward
+ app/views/academics/index.html.erb  |   3 ++-
+ config/initializers/active_admin.rb |   2 +-
+ config/routes.rb                    |  20 ++++++++++++++++--
+ db/seeds.rb                         |   5 ++++-
+ work.cec.txt                        | 160 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ yarn.lock                           |   2 ++
+ 6 files changed, 187 insertions(+), 5 deletions(-)
+ create mode 100644 work.cec.txt
+[ask@yoga academic-app]$
+
+after pull
+activeadmin.rb -- see last line  commented out -
+#ask 31/10
+#config.skip_before_action :authenticate_user
+
+now
+[ask@yoga academic-app]$ rails s
+is working
+
+
+After days of struggle to add a new user from admon dashboard finally it worked
+here is the  app/admin/users.rb file which caused the trouble,
+Instead of encrypted_password use simpke use password even though in the table it is encrypted_password.
+
+ActiveAdmin.register User do
+  permit_params :name, :email, :role, :password
+  index do
+    column :name
+    column :email
+    column :role
+
+    actions
+  end
+  form do |f|
+    f.inputs "User Details" do
+      f.inputs :name
+      f.inputs :email
+      f.inputs :role
+      f.inputs :password
+    end
+    f.actions
+  end
+end
