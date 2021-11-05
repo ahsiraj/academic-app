@@ -29,7 +29,6 @@ ActiveAdmin.register User do
     column :name
     column :email
     column :role
-
     actions
   end
   form do |f|

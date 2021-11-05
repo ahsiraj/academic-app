@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users
+  #devise_for :users
+  #5/11 devise_for :users, controllers: {
+  #          sessions: "users/sessions",
+  #       } #5/11
+
+  #          :controllers => { registrations: "registrations" } #5/11
+
+  #5/11
+  devise_for :users, controllers: {
+                       sessions: "users/sessions",
+                       passwords: "users/passwords",
+                       registrations: "users/registrations",
+                     }
+
   devise_scope :user do
     get "/users/sign_out" => "devise/sessions#destroy"
   end

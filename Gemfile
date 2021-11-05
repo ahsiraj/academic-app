@@ -62,3 +62,5 @@ gem "pg", "~> 1.2"
 gem "activeadmin"
 
 gem "devise", "~> 4.8"
+
+gem "cancan", "~> 1.6"
