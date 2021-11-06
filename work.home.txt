@@ -123,3 +123,59 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	app/controllers/users/
 	app/models/ability.rb
+
+
+[ask@yoga academic-app]$ git add . -v
+add 'Gemfile'
+add 'Gemfile.lock'
+add 'app/admin/users.rb'
+add 'app/controllers/application_controller.rb'
+add 'app/models/user.rb'
+add 'config/initializers/active_admin.rb'
+add 'config/routes.rb'
+add 'work.home.txt'
+add 'app/controllers/users/confirmations_controller.rb'
+add 'app/controllers/users/omniauth_callbacks_controller.rb'
+add 'app/controllers/users/passwords_controller.rb'
+add 'app/controllers/users/registrations_controller.rb'
+add 'app/controllers/users/sessions_controller.rb'
+add 'app/controllers/users/unlocks_controller.rb'
+add 'app/models/ability.rb'
+[ask@yoga academic-app]$ git commit -m "cancan"
+[ask@yoga academic-app]$ git push
+
+6/11
+[ask@yoga academic-app]$ rails g active_admin:resource TimeSlot
+Edited app/admin/time_slots.rb
+[ask@yoga academic-app]$ rails g active_admin:resource Timetable
+Edited app/admin/timetables.rb
+
+Some more progress
+[ask@yoga academic-app]$ git status
+	modified:   app/models/timetable.rb
+	modified:   work.home.txt
+Untracked files:
+ 	app/admin/time_slots.rb
+	app/admin/timetables.rb
+
+
+
+ask@yoga academic-app]$ git commit -m "timetable progress"
+
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app/models/timetable.rb
+	modified:   work.home.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app/admin/time_slots.rb
+	app/admin/timetables.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[ask@y
