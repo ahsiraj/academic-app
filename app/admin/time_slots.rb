@@ -19,4 +19,19 @@ ActiveAdmin.register TimeSlot do
   #   permitted
   # end
 
+  index do
+    column :slot
+    column :from
+    column :to
+    actions
+  end
+  form do |f|
+    f.inputs "Time Slot Details" do
+      f.inputs :slot
+      f.inputs :from
+      f.inputs :to
+      # :to, :as => :time_picker
+    end
+    f.actions
+  end
 end
