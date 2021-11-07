@@ -14,5 +14,21 @@ ActiveAdmin.register Subject do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+  #v
+  index do
+    column :code
+    column :name
+    column :category
+    actions
+  end
+  form do |f|
+    f.inputs "Subject Details" do
+      f.inputs :code
+      f.inputs :name
+      f.input :category, as: :select, collection: (["Core", "Elective"])
+    end
+    f.actions
+  end
+  #^ ask 7/11
 
 end

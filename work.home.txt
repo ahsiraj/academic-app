@@ -158,24 +158,38 @@ Untracked files:
  	app/admin/time_slots.rb
 	app/admin/timetables.rb
 
-
-
 ask@yoga academic-app]$ git commit -m "timetable progress"
+pushed
 
+[ask@yoga academic-app]$ git push heroku
+...
+remote: Verifying deploy... done.
+To https://git.heroku.com/ask-academic-app.git
+   182f5d2..a08d6e0  master -> master
 
-On branch master
-Your branch is up to date with 'origin/master'.
+   [ask@yoga academic-app]$ heroku run rails db:migrate
+Running rails db:migrate on ⬢ ask-academic-app... done
+ ›   Error: Cannot run more than 1 Free size dynos.
+ ›
+ ›   Error ID: cannot_run_above_limit
+ ›   See https://devcenter.heroku.com/articles/dyno-types#default-scaling-limits for more information.
+[ask@yoga academic-app]$ heroku run rails db:seed
+Running rails db:seed on ⬢ ask-academic-app... done
+ ›   Error: Cannot run more than 1 Free size dynos.
+ ›
+ ›   Error ID: cannot_run_above_limit
+ ›   See https://devcenter.heroku.com/articles/dyno-types#default-scaling-limits for more information.
+[ask@yoga academic-app]$
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   app/models/timetable.rb
-	modified:   work.home.txt
+7/11
+$ rails g migration SubjectColumnChangeTypeToCategory
+create    db/migrate/20211107071012_subject_column_change_type_to_category.rb
+edited it
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-	app/admin/time_slots.rb
-	app/admin/timetables.rb
+[ask@yoga academic-app]$ rails db:migrate
+== 20211107071012 SubjectColumnChangeTypeToCategory: migrating ================
+-- rename_column(:subjects, :type, :category)
+   -> 0.0258s
+== 20211107071012 SubjectColumnChangeTypeToCategory: migrated (0.0263s) =======
 
-no changes added to commit (use "git add" and/or "git commit -a")
-[ask@y
+subjects type seems a keyworf, changed to category. Creation okay. editing to change category not working.

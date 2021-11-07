@@ -104,3 +104,6 @@ total 40
 -rw-r--r-- 1 ask ask  414 Oct 19 13:01 20211019073111_create_active_admin_comments.rb
 -rw-r--r-- 1 ask ask 1749 Oct 19 13:14 20211019073105_add_devise_to_users.rb
 -rw-r--r-- 1 ask ask  142 Oct 19 21:47 20211019161738_remove_password_digest_from_users.rb
+
+7/11
+rails g migration SubjectColumnChangeTypeToCategory
