@@ -1,0 +1,68 @@
+ask@ask-pi:~/lite/academic-app$ sudo -i -u postgres
+postgres@ask-pi:~$ psql
+postgres=# alter user postgres password 'kk123';
+postgres=# create database academic_db
+postgres-# \q
+postgres@ask-pi:~$ exit
+
+
+ask@ask-pi:~/lite/academic-app$ gem install rails pg
+ERROR:  Error installing pg:
+Can't find the 'libpq-fe.h header
+
+ask@ask-pi:~/lite/academic-app$ set|grep http
+FTP_PROXY=http://192.168.0.2:3128/
+HTTPS_PROXY=http://192.168.0.2:3128/
+HTTP_PROXY=http://192.168.0.2:3128/
+ftp_proxy=http://192.168.0.2:3128/
+http_proxy=http://192.168.0.2:3128/
+https_proxy=http://192.168.0.2:3128/
+
+ask@ask-pi:~/lite/academic-app$ sudo 'http_proxy=http://192.168.0.2:3128' apt-get install libpq-dev
+ask@ask-pi:~/lite/academic-app$ gem install  pg
+
+
+vscode install
+ask@ask-pi:~$ wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+ask@ask-pi:~$ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+ask@ask-pi:~$ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+ask@ask-pi:~$ rm -f packages.microsoft.gpg
+ask@ask-pi:~$ sudo apt install apt-transport-https
+ask@ask-pi:~$ sudo 'http_proxy=http://192.168.0.2:3128' apt-get update
+ask@ask-pi:~$ sudo 'http_proxy=http://192.168.0.2:3128' apt-get install apt-transport-https
+ask@ask-pi:~$ sudo 'http_proxy=http://192.168.0.2:3128' apt-get update
+ask@ask-pi:~$ sudo 'http_proxy=http://192.168.0.2:3128' apt-get install code
+
+ask@ask-pi:~/lite/academic-app$ code .
+installed prettier. enables format on save
+
+ask@ask-pi:~/lite/academic-app$ gem install rufo
+In code install ruby extension by Peng, and rufo by jnbt
+settings.json is changed to
+{
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "ruby.format": false,
+  "ruby.useLanguageServer": true,
+  "rufo.exe": "/home/ask/.rbenv/shims/rufo"
+}
+
+ask@ask-pi:~/lite/academic-app$ which rufo
+/home/ask/.rbenv/shims/rufo
+
+ask@ask-pi:~$ sudo 'http_proxy=http://192.168.0.2:3128' apt install postgresql postgresql-contrib libpq-dev
+
+ask@ask-pi:~/lite/academic-app$ gem install rails
+ask@ask-pi:~/lite/academic-app$ rbenv rehash
+ask@ask-pi:~/lite/academic-app$ gem install bundler:2.2.27
+ask@ask-pi:~/lite/academic-app$ bundle install
+
+ask@ask-pi:~/lite/academic-app$ rails db:create:all
+ask@ask-pi:~/lite/academic-app$ rails db:migrate
+ask@ask-pi:~/lite/academic-app$ rails webpacker:install
+ask@ask-pi:~/lite/academic-app$ rails s
+ask@ask-pi:~/lite/academic-app$ rails db:seed
