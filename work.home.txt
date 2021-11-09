@@ -192,4 +192,4 @@ edited it
    -> 0.0258s
 == 20211107071012 SubjectColumnChangeTypeToCategory: migrated (0.0263s) =======
 
-subjects type seems a keyworf, changed to category. Creation okay. editing to change category not working.
+subjects type seems a keyword, changed to category. Creation okay. editing to change category not working.

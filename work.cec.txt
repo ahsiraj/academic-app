@@ -112,3 +112,27 @@ devise_for :users
   end
 in routes.rb
 users/sign_out also works!! progressing
+
+3/11/21 Observed the following as working
+http://127.0.0.1:3000/, http://127.0.0.1:3000/academics, http://127.0.0.1:3000/academics/index, http://127.0.0.1:3000/users/sign_in, http://127.0.0.1:3000/users/sign_out
+
+and http://127.0.0.1:3000/admin also loading http://127.0.0.1:3000/users/sign_in with contents slightly different
+
+
+All sign_ins are going for admin.
+User creations from admin panel which worked earlier is not working now.
+Subject creation worked.
+
+No effect on changing app/admin/users.rb ????
+
+8/11/21
+[ask@yoga academic-app]$ rails g active_admin:resource Attendance
+Running via Spring preloader in process 13824
+      create  app/admin/attendances.rb
+Edited it
+
+$ rails g active_admin:resource FacultySubject
+$ rails g active_admin:resource StudentSubject
+
+http://127.0.0.1:3000/users/sign_up
+is working!! Seems not intended.

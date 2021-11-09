@@ -29,7 +29,7 @@ ActiveAdmin.register Timetable do
       #f.inputs :day
       f.input :day, as: :select, collection: (["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
       f.inputs :slot
-      f.input :subject_id, as: :select, collection: Subject.all.map { |a| a.name }
+      f.input :subject_id, as: :select, collection: Subject.all #.map { |a| a.name }
     end
     f.actions
   end

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get "/users/sign_out" => "devise/sessions#destroy"
+    # get "/users/sign_in" => "devse/sessions#new", as: :new_sessions
   end
 
   #, ActiveAdmin::Devise.config
@@ -29,11 +30,15 @@ Rails.application.routes.draw do
   get "academics/index"
   get "academics", to: "academics#index"
 
+  #get 'admins', to: 'admins/admins#index'
+
   #post 	"users/sign_in" =>  "devise/sessions#create",  as: :new_sessions
   #delete "/users/sign_out" => "devise/sessions#destroy", as: :destroy_user_session_path
 
   #resources :user_session
   #get "/signin" => "sessions#new", as: :new_sessions
-  #resources :users
+  resources :users
   resources :academics
+  #ActiveAdmin.routes(self)
+
 end
