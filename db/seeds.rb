@@ -8,4 +8,4 @@
 # User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 #ask 1/11 cec cab(commented above line)
-User.create!(email: 'ask@ceconline.edu', password: 'passask', password_confirmation: 'passask') if Rails.env.development?
+User.create!(email: "ask1@ceconline.edu", password: "passask", password_confirmation: "passask", role: "admin") if Rails.env.development?

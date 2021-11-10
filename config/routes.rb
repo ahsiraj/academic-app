@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "application#hello"
+  #root "application#hello"
   #devise_for :users
   #5/11 devise_for :users, controllers: {
   #          sessions: "users/sessions",
