@@ -136,3 +136,10 @@ $ rails g active_admin:resource StudentSubject
 
 http://127.0.0.1:3000/users/sign_up
 is working!! Seems not intended.
+
+/user/sign_in : user_session_path : users/sessions#new : app/views/devise/sessions/new.html.erb
+
+10/11
+erb file default formatting via rufy-rubo created erreneous file.
+$ bundle add htmlbeautifier
+But error json file erb rufo association removed.

@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
   #      users_path
   #    end
   #  end
+
+  #ask 10/11
+  def hello
+    render html: "hello, world! appliation_controller"
+  end
 end

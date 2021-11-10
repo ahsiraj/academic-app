@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "application#hello"
   #devise_for :users
   #5/11 devise_for :users, controllers: {
   #          sessions: "users/sessions",
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
   #root to: "home#index"
   #root "academics#index" #ok
 
-  root to: "academics#index"
+  #root to: "academics#index"
 
   get "academics/index"
   get "academics", to: "academics#index"
