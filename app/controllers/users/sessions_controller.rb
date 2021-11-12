@@ -8,6 +8,20 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
+  def new
+    super
+    #render html: current_user
+    #render_to_string html: "Inside app/controllers/users/session_controller.rb#new"
+    #render_to_string html: current_user
+    #render_to_string html: User.all
+    if current_user
+      # render_to_string html "admin" if current_user == "admin"
+      render_to_string html: "Inside app/controllers/users/session_controller.rb#new"
+    end
+
+    #render html: "test"
+  end
+
   # POST /resource/sign_in
   # def create
   #   super
@@ -24,4 +38,8 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  puts "test------------------------------------------------------"
+
+  #ask 12/11 This class was empty till now.
 end
