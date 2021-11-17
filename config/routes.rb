@@ -22,18 +22,17 @@ Rails.application.routes.draw do
   #, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  #root to: redirect('/about.html')
-  #root to: "home#index"
+  #root  redirect('/about.html')
+  #root  "home#index"
   #root "academics#index" #ok
-
-  #root to: "academics#index"
 
   get "academics/index"
   get "academics", to: "academics#index"
-
+  #get "login", to: "sessions#new", as: "login"
   #get 'admins', to: 'admins/admins#index'
 
-  #post 	"users/sign_in" =>  "devise/sessions#create",  as: :new_sessions
+  #post "users/sign_in" => "devise/sessions#create", as: :new_sessions #ok
+  #get "users/sign_in" => "devise/sessions#create", as: :new_sessions #ok
   #delete "/users/sign_out" => "devise/sessions#destroy", as: :destroy_user_session_path
 
   #resources :user_session

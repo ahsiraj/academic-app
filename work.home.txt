@@ -42,9 +42,9 @@ now
 is working
 
 
-After days of struggle to add a new user from admon dashboard finally it worked
+After days of struggle to add a new user from admin dashboard finally it worked
 here is the  app/admin/users.rb file which caused the trouble,
-Instead of encrypted_password use simpke use password even though in the table it is encrypted_password.
+Instead of encrypted_password use simply use password even though in the table it is encrypted_password.
 
 ActiveAdmin.register User do
   permit_params :name, :email, :role, :password
@@ -193,3 +193,28 @@ edited it
 == 20211107071012 SubjectColumnChangeTypeToCategory: migrated (0.0263s) =======
 
 subjects type seems a keyword, changed to category. Creation okay. editing to change category not working.
+
+
+15/11/21
+Ability.erb file edited to permit Attendance management to faculty
+    if user.admin?
+      can :manage, :all
+    elsif user.faculty?
+      can :manage, Attendance
+      can :read, :all
+    end
+
+    schema modify: attendances
+    subject_id chnaged to faculty_subject_id
+
+$ rails g migration AttendanceColumnChangeSubjectIdToFacultySubjectId
+    create    db/migrate/20211115082733_attendance_column_change_subject_id_to_faculty_subject_id.rb
+edited it
+[ask@yoga academic-app]$ rails db:migrate
+== 20211115082733 AttendanceColumnChangeSubjectIdToFacultySubjectId: migrating
+-- rename_column(:attendances, :subject_id, :faculty_subject_id)
+   -> 0.0230s
+== 20211115082733 AttendanceColumnChangeSubjectIdToFacultySubjectId: migrated (0.0233s)
+
+list tables from rsils c
+ActiveRecord::Base.connection.tables

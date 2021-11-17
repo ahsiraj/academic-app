@@ -12,13 +12,33 @@ class Ability
     #   end
     #
 
+    #v
+=begin
     if user.admin?
       can :manage, :all
     else
       can :read, :all
     end
+=end
     #ask 6/11^
 
+    #v
+    if user.faculty?
+      sublist = FacultySubject.where(:faculty_id => user.id)
+      puts "sublist"
+      puts sublist.all
+      puts "sublist"
+    end
+
+    if user.admin?
+      can :manage, :all
+    elsif user.faculty?
+      can :manage, Attendance #, :faculty_subject_id => sublist
+      can :read, :all
+    end
+
+    #ask 15/11^
+    #=end
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
