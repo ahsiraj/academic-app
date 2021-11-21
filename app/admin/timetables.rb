@@ -19,6 +19,7 @@ ActiveAdmin.register Timetable do
   #   permitted
   # end
   index do
+    column :id
     column :day
     column :slot
     column :subject_id

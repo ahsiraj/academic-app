@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   #root  redirect('/about.html')
   #root  "home#index"
-  #root "academics#index" #ok
+  root "academics#index" #ok
 
   get "academics/index"
   get "academics", to: "academics#index"

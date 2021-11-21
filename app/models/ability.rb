@@ -25,8 +25,9 @@ class Ability
     #v
     if user.faculty?
       sublist = FacultySubject.where(:faculty_id => user.id)
+      #sublist = FacultySubject.subjects
       puts "sublist"
-      puts sublist.all
+      puts @attendances
       puts "sublist"
     end
 
@@ -34,6 +35,8 @@ class Ability
       can :manage, :all
     elsif user.faculty?
       can :manage, Attendance #, :faculty_subject_id => sublist
+      can :read, :all
+    else
       can :read, :all
     end
 

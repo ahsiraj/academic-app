@@ -4,6 +4,9 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
+  #config.parent_controller = "::ApplicationController"
+  #^ask 21/11
+
   config.site_title = "Academic App"
 
   # Set the link url for the title. For example, to take

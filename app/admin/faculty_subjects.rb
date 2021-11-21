@@ -9,6 +9,7 @@ ActiveAdmin.register FacultySubject do
   #v
   permit_params :faculty_id, :subject_id
   index do
+    column :id
     column :faculty_id
     column :subject_id
     actions

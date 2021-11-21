@@ -16,6 +16,7 @@ ActiveAdmin.register Subject do
   # end
   #v
   index do
+    column :id
     column :code
     column :name
     column :category

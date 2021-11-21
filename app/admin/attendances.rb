@@ -6,8 +6,13 @@ ActiveAdmin.register Attendance do
   # Uncomment all parameters which should be permitted for assignment
   #
   #V
+  puts "inside app/admin/attendances.rb" #  puts ok
+  #puts current_user.id #not available
+  puts :current_user
+  puts @current_user
   permit_params :date, :slot, :faculty_subject_id, :student_id
   index do
+    column :id
     column :date
     column :slot
     column :faculty_subject_id
@@ -19,7 +24,7 @@ ActiveAdmin.register Attendance do
       f.inputs :date
       f.inputs :slot
       #f.input :faculty_subject_id, as: :select, collection: FacultySubject.all.map { |a| a.subject_id }
-      f.input :faculty_subject_id, as: :select, collection: FacultySubject.where(:faculty_id => current_user.id)
+      #f.input :faculty_subject_id, as: :select, collection: FacultySubject.where(:faculty_id => current_user.id)
 
       # f.input :student_id, as: :select, collection: User.all.map { |a| a.role == "student" }
       f.input :student_id, :as => :select, :collection => User.where(:role => "student") #, :active => true).order(:name), :include_blank => true

@@ -1,6 +1,6 @@
 class Attendance < ApplicationRecord
-  has_many :faculty_subjects
-  has_many :users #15/11
+  belongs_to :faculty_subject
+  #has_many :users #15/11
   #  after_initialize :set_default_subject, :if => :new_record?
 
   # def set_default_subject

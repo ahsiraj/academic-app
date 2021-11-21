@@ -216,5 +216,16 @@ edited it
    -> 0.0230s
 == 20211115082733 AttendanceColumnChangeSubjectIdToFacultySubjectId: migrated (0.0233s)
 
-list tables from rsils c
-ActiveRecord::Base.connection.tables
+list tables from rails c
+ApplicationRecord.connection.tables
+
+21/11
+rails g migration TimeSlotColumnsTypeChange
+rails d migration TimeSlotColumnsTypeChange
+rails d model TimeSlot slot:integer from:time to:time
+
+rails db:migrate
+irb(main):008:0> ActiveRecord::Migration.drop_table(:time_slots)
+
+rails g model TimeSlot slot:integer from:float to:float
+rails db:migrate

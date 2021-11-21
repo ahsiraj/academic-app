@@ -107,3 +107,13 @@ total 40
 
 7/11
 rails g migration SubjectColumnChangeTypeToCategory
+
+x/11
+$ rails g migration AttendanceColumnChangeSubjectIdToFacultySubjectId
+
+
+21/11
+rails g migration TimeSlotColumnsTypeChange
+rails d migration TimeSlotColumnsTypeChange
+rails d model TimeSlot slot:integer from:time to:time
+rails g model TimeSlot slot:integer from:float to:float

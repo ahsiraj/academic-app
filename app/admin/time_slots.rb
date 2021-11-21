@@ -20,6 +20,7 @@ ActiveAdmin.register TimeSlot do
   # end
 
   index do
+    column :id
     column :slot
     column :from
     column :to
@@ -30,7 +31,6 @@ ActiveAdmin.register TimeSlot do
       f.inputs :slot
       f.inputs :from
       f.inputs :to
-      # :to, :as => :time_picker
     end
     f.actions
   end

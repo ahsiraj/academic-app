@@ -26,6 +26,7 @@
 ActiveAdmin.register User do
   permit_params :name, :email, :role, :password
   index do
+    column :id
     column :name
     column :email
     column :role
