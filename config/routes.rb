@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   #root  redirect('/about.html')
   #root  "home#index"
   root "academics#index" #ok
-
+  get "academics/about"
   get "academics/index"
   get "academics", to: "academics#index"
   #get "login", to: "sessions#new", as: "login"

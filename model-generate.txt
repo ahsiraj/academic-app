@@ -117,3 +117,6 @@ rails g migration TimeSlotColumnsTypeChange
 rails d migration TimeSlotColumnsTypeChange
 rails d model TimeSlot slot:integer from:time to:time
 rails g model TimeSlot slot:integer from:float to:float
+
+22/11
+rails g scaffold User name:string email:string encrypted_password:string role:integer --skip-migration --force

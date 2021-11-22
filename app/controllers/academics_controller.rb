@@ -5,6 +5,9 @@ class AcademicsController < ApplicationController
     #test
   end
 
+  def about
+  end
+
   def test
     render html: "We at academics_controller.rb # test\n"
   end

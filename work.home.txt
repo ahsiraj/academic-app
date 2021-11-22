@@ -229,3 +229,39 @@ irb(main):008:0> ActiveRecord::Migration.drop_table(:time_slots)
 
 rails g model TimeSlot slot:integer from:float to:float
 rails db:migrate
+
+22/11
+rails g scaffold User name:string email:string encrypted_password:string role:integer --skip-migration --force
+Running via Spring preloader in process 109995
+      invoke  active_record
+       force    app/models/user.rb
+      invoke    test_unit
+   identical      test/models/user_test.rb
+       force      test/fixtures/users.yml
+      invoke  resource_route
+       route    resources :users
+      invoke  inherited_resources_controller
+      create    app/controllers/users_controller.rb
+      invoke    erb
+      create      app/views/users
+      create      app/views/users/index.html.erb
+      create      app/views/users/edit.html.erb
+      create      app/views/users/show.html.erb
+      create      app/views/users/new.html.erb
+      create      app/views/users/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/users_controller_test.rb
+      create      test/system/users_test.rb
+      invoke    helper
+      create      app/helpers/users_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/users/index.json.jbuilder
+      create      app/views/users/show.json.jbuilder
+      create      app/views/users/_user.json.jbuilder
+      invoke  assets
+      invoke    scss
+      create      app/assets/stylesheets/users.scss
+      invoke  scss
+      create    app/assets/stylesheets/scaffolds.scss

@@ -1,0 +1,12 @@
+<!-- <p id="notice"><%= notice %></p> -->
+<div class="jumbotron">
+  <h1 class="display-4"><%= @user.name %></h1>
+  <p class="lead"><%= @user.email %> |
+    <strong>Role:</strong>
+    <%= @user.role %> |
+    <strong>Encrypted password:</strong>
+    <%= @user.encrypted_password %></p>
+  <hr class="my-4">
+  <%= link_to 'Edit', edit_user_path(@user), class:"btn btn-secondary" %>
+  <%= link_to 'Back', users_path, class:"btn btn-dark" %>
+</div>
