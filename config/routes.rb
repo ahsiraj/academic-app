@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   #root "application#hello"
   #devise_for :users
   #5/11 devise_for :users, controllers: {
@@ -8,16 +9,16 @@ Rails.application.routes.draw do
   #          :controllers => { registrations: "registrations" } #5/11
 
   #5/11
-  devise_for :users, controllers: {
+=begin devise_for :users, controllers: {
                        sessions: "users/sessions",
                        passwords: "users/passwords",
                        registrations: "users/registrations",
                      }
-
-  devise_scope :user do
+=end
+=begin devise_scope :user do
     get "/users/sign_out" => "devise/sessions#destroy"
-    # get "/users/sign_in" => "devse/sessions#new", as: :new_sessions
-  end
+    get "/users/sign_in" => "devise/sessions#new", as: :new_user_session
+=end
 
   #, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -40,5 +41,10 @@ Rails.application.routes.draw do
   resources :users
   resources :academics
   #ActiveAdmin.routes(self)
-
+  resources :timetables
+  resources :time_slots
+  resources :subjects
+  resources :student_subjects
+  resources :faculty_subjects
+  resources :attendances
 end

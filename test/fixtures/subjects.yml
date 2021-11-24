@@ -3,9 +3,9 @@
 one:
   code: MyString
   name: MyString
-  type: 
+  category: MyString
 
 two:
   code: MyString
   name: MyString
-  type: 
+  category: MyString

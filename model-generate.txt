@@ -120,3 +120,32 @@ rails g model TimeSlot slot:integer from:float to:float
 
 22/11
 rails g scaffold User name:string email:string encrypted_password:string role:integer --skip-migration --force
+
+23/11
+rails g scaffold   --skip-migration --force
+
+rails g scaffold Attendance date:date slot:integer faculty_subject_id:integer student_id:integer --skip-migration --force
+rails g scaffold FacultySubject faculty_id:integer subject_id:integer  --skip-migration --force
+rails g scaffold StudentSubject student_id:integer subject_id:integer  --skip-migration --force
+rails g scaffold Subject code:string name:string category:string  --skip-migration --force
+rails g scaffold TimeSlot slot:integer from:float to:float --skip-migration --force
+rails g scaffold Timetable day:string slot:integer subject_id:integer --skip-migration --force
+
+
+rails g scaffold Attendance date:date slot:integer faculty_id:integer subject_id:integer student_id:integer --force
+Migration error
+So
+rails d migration Attendance date:date slot:integer faculty_id:integer subject_id:integer student_id:integer
+mv 20211123135645_create_attendances.rb ~/backup
+
+
+rails g migration AttendanceChange
+
+
+rails g scaffold FacultySubject faculty_id:integer subject_id:integer  --skip-migration --force -c=scaffold_controller
+rails g scaffold StudentSubject student_id:integer subject_id:integer  --skip-migration --force -c=scaffold_controller
+rails g scaffold Subject code:string name:string category:string  --skip-migration --force -c=scaffold_controller
+rails g scaffold TimeSlot slot:integer from:float to:float --skip-migration --force -c=scaffold_controller
+rails g scaffold Timetable day:string slot:integer subject_id:integer --skip-migration --force -c=scaffold_controller
+rails g scaffold Attendance date:date slot:integer faculty_id:integer subject_id:integer student_id:integer --skip-migration --force -c=scaffold_controller
+rails g scaffold User name:string email:string encrypted_password:string role:integer --skip-migration --force -c=scaffold_controller

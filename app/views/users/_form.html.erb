@@ -9,24 +9,25 @@
       </ul>
     </div>
   <% end %>
-  <div class="field form-group">
+  <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, class:"form-control", placeholder:"Name" %>
+    <%= form.text_field :name %>
   </div>
-  <div class="field form-group">
+  <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
+    <%= form.text_field :email %>
   </div>
-  <div class="field form-group">
-    <%= form.label :encrypted_password %>
-    <%= form.text_field :encrypted_password, class:"form-control" %>
+  <div class="field">
+    <%= form.label :encryptedd_password %>
+    <%= form.text_field :encrypted_password %>
+    <%#= form.password_field :password %>
+    <%#= form.password_field :encrypted_password %>
   </div>
-  <div class="field form-group">
+  <div class="field">
     <%= form.label :role %>
-    <%= form.number_field :role, class:"form-control", placeholder:"1" %>
+    <%= form.number_field :role %>
   </div>
-  <br/>
   <div class="actions">
-    <%= form.submit class:"btn btn-secondary" %>
+    <%= form.submit %>
   </div>
 <% end %>

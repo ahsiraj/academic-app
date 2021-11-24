@@ -42,7 +42,8 @@ now
 is working
 
 
-After days of struggle to add a new user from admin dashboard finally it worked
+After days of struggle to add a
+user from admin dashboard finally it worked
 here is the  app/admin/users.rb file which caused the trouble,
 Instead of encrypted_password use simply use password even though in the table it is encrypted_password.
 
@@ -231,7 +232,8 @@ rails g model TimeSlot slot:integer from:float to:float
 rails db:migrate
 
 22/11
-rails g scaffold User name:string email:string encrypted_password:string role:integer --skip-migration --force
+
+
 Running via Spring preloader in process 109995
       invoke  active_record
        force    app/models/user.rb
@@ -265,3 +267,624 @@ Running via Spring preloader in process 109995
       create      app/assets/stylesheets/users.scss
       invoke  scss
       create    app/assets/stylesheets/scaffolds.scss
+
+
+
+23/11
+[ask@yoga academic-app]$ rails g scaffold  Attendance date:date slot:integer faculty_subject_id:integer student_id:integer --skip-migration --force
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+Running via Spring preloader in process 138237
+      invoke  active_record
+       force    app/models/attendance.rb
+      invoke    test_unit
+   identical      test/models/attendance_test.rb
+       force      test/fixtures/attendances.yml
+      invoke  resource_route
+       route    resources :attendances
+      invoke  inherited_resources_controller
+       force    app/controllers/attendances_controller.rb
+      invoke    erb
+      create      app/views/attendances
+      create      app/views/attendances/index.html.erb
+      create      app/views/attendances/edit.html.erb
+      create      app/views/attendances/show.html.erb
+      create      app/views/attendances/new.html.erb
+      create      app/views/attendances/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/attendances_controller_test.rb
+      create      test/system/attendances_test.rb
+      invoke    helper
+      create      app/helpers/attendances_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/attendances/index.json.jbuilder
+      create      app/views/attendances/show.json.jbuilder
+      create      app/views/attendances/_attendance.json.jbuilder
+      invoke  assets
+      invoke    scss
+      create      app/assets/stylesheets/attendances.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+[ask@yoga academic-app]$ rails g scaffold FacultySubject faculty_id:integer subject_id:integer  --skip-migration --force
+rails g scaffold StudentSubject student_id:integer subject_id:integer  --skip-migration --force
+rails g scaffold Subject code:string name:string category:string  --skip-migration --force
+rails g scaffold  TimeSlot slot:integer from:float to:float --skip-migration --force
+rails g scaffold  Timetable day:string slot:integer subject_id:integer --skip-migration --force
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+Running via Spring preloader in process 138278
+      invoke  active_record
+       force    app/models/faculty_subject.rb
+      invoke    test_unit
+   identical      test/models/faculty_subject_test.rb
+   identical      test/fixtures/faculty_subjects.yml
+      invoke  resource_route
+       route    resources :faculty_subjects
+      invoke  inherited_resources_controller
+      create    app/controllers/faculty_subjects_controller.rb
+      invoke    erb
+      create      app/views/faculty_subjects
+      create      app/views/faculty_subjects/index.html.erb
+      create      app/views/faculty_subjects/edit.html.erb
+      create      app/views/faculty_subjects/show.html.erb
+      create      app/views/faculty_subjects/new.html.erb
+      create      app/views/faculty_subjects/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/faculty_subjects_controller_test.rb
+      create      test/system/faculty_subjects_test.rb
+      invoke    helper
+      create      app/helpers/faculty_subjects_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/faculty_subjects/index.json.jbuilder
+      create      app/views/faculty_subjects/show.json.jbuilder
+      create      app/views/faculty_subjects/_faculty_subject.json.jbuilder
+      invoke  assets
+      invoke    scss
+      create      app/assets/stylesheets/faculty_subjects.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+Running via Spring preloader in process 138303
+      invoke  active_record
+       force    app/models/student_subject.rb
+      invoke    test_unit
+   identical      test/models/student_subject_test.rb
+   identical      test/fixtures/student_subjects.yml
+      invoke  resource_route
+       route    resources :student_subjects
+      invoke  inherited_resources_controller
+      create    app/controllers/student_subjects_controller.rb
+      invoke    erb
+      create      app/views/student_subjects
+      create      app/views/student_subjects/index.html.erb
+      create      app/views/student_subjects/edit.html.erb
+      create      app/views/student_subjects/show.html.erb
+      create      app/views/student_subjects/new.html.erb
+      create      app/views/student_subjects/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/student_subjects_controller_test.rb
+      create      test/system/student_subjects_test.rb
+      invoke    helper
+      create      app/helpers/student_subjects_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/student_subjects/index.json.jbuilder
+      create      app/views/student_subjects/show.json.jbuilder
+      create      app/views/student_subjects/_student_subject.json.jbuilder
+      invoke  assets
+      invoke    scss
+      create      app/assets/stylesheets/student_subjects.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+Running via Spring preloader in process 138329
+      invoke  active_record
+       force    app/models/subject.rb
+      invoke    test_unit
+   identical      test/models/subject_test.rb
+       force      test/fixtures/subjects.yml
+      invoke  resource_route
+       route    resources :subjects
+      invoke  inherited_resources_controller
+      create    app/controllers/subjects_controller.rb
+      invoke    erb
+      create      app/views/subjects
+      create      app/views/subjects/index.html.erb
+      create      app/views/subjects/edit.html.erb
+      create      app/views/subjects/show.html.erb
+      create      app/views/subjects/new.html.erb
+      create      app/views/subjects/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/subjects_controller_test.rb
+      create      test/system/subjects_test.rb
+      invoke    helper
+      create      app/helpers/subjects_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/subjects/index.json.jbuilder
+      create      app/views/subjects/show.json.jbuilder
+      create      app/views/subjects/_subject.json.jbuilder
+      invoke  assets
+      invoke    scss
+      create      app/assets/stylesheets/subjects.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+Running via Spring preloader in process 138353
+      invoke  active_record
+   identical    app/models/time_slot.rb
+      invoke    test_unit
+   identical      test/models/time_slot_test.rb
+   identical      test/fixtures/time_slots.yml
+      invoke  resource_route
+       route    resources :time_slots
+      invoke  inherited_resources_controller
+      create    app/controllers/time_slots_controller.rb
+      invoke    erb
+      create      app/views/time_slots
+      create      app/views/time_slots/index.html.erb
+      create      app/views/time_slots/edit.html.erb
+      create      app/views/time_slots/show.html.erb
+      create      app/views/time_slots/new.html.erb
+      create      app/views/time_slots/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/time_slots_controller_test.rb
+      create      test/system/time_slots_test.rb
+      invoke    helper
+      create      app/helpers/time_slots_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/time_slots/index.json.jbuilder
+      create      app/views/time_slots/show.json.jbuilder
+      create      app/views/time_slots/_time_slot.json.jbuilder
+      invoke  assets
+      invoke    scss
+      create      app/assets/stylesheets/time_slots.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+Running via Spring preloader in process 138377
+      invoke  active_record
+       force    app/models/timetable.rb
+      invoke    test_unit
+   identical      test/models/timetable_test.rb
+   identical      test/fixtures/timetables.yml
+      invoke  resource_route
+       route    resources :timetables
+      invoke  inherited_resources_controller
+      create    app/controllers/timetables_controller.rb
+      invoke    erb
+      create      app/views/timetables
+      create      app/views/timetables/index.html.erb
+      create      app/views/timetables/edit.html.erb
+      create      app/views/timetables/show.html.erb
+      create      app/views/timetables/new.html.erb
+      create      app/views/timetables/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/timetables_controller_test.rb
+      create      test/system/timetables_test.rb
+      invoke    helper
+      create      app/helpers/timetables_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/timetables/index.json.jbuilder
+      create      app/views/timetables/show.json.jbuilder
+      create      app/views/timetables/_timetable.json.jbuilder
+      invoke  assets
+      invoke    scss
+      create      app/assets/stylesheets/timetables.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+[ask@yoga academic-app]$
+
+
+24/11
+[ask@yoga academic-app]$ rails g scaffold FacultySubject faculty_id:integer subject_id:integer  --skip-migration --force -c=scaffold_controller
+rails g scaffold StudentSubject student_id:integer subject_id:integer  --skip-migration --force -c=scaffold_controller
+rails g scaffold Subject code:string name:string category:string  --skip-migration --force -c=scaffold_controller
+rails g scaffold TimeSlot slot:integer from:float to:float --skip-migration --force -c=scaffold_controller
+rails g scaffold Timetable day:string slot:integer subject_id:integer --skip-migration --force -c=scaffold_controller
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+Running via Spring preloader in process 159846
+      invoke  active_record
+   identical    app/models/faculty_subject.rb
+      invoke    test_unit
+   identical      test/models/faculty_subject_test.rb
+   identical      test/fixtures/faculty_subjects.yml
+      invoke  resource_route
+       route    resources :faculty_subjects
+      invoke  scaffold_controller
+       force    app/controllers/faculty_subjects_controller.rb
+      invoke    erb
+       exist      app/views/faculty_subjects
+   identical      app/views/faculty_subjects/index.html.erb
+   identical      app/views/faculty_subjects/edit.html.erb
+   identical      app/views/faculty_subjects/show.html.erb
+   identical      app/views/faculty_subjects/new.html.erb
+   identical      app/views/faculty_subjects/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+   identical      test/controllers/faculty_subjects_controller_test.rb
+   identical      test/system/faculty_subjects_test.rb
+      invoke    helper
+   identical      app/helpers/faculty_subjects_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+   identical      app/views/faculty_subjects/index.json.jbuilder
+   identical      app/views/faculty_subjects/show.json.jbuilder
+   identical      app/views/faculty_subjects/_faculty_subject.json.jbuilder
+      invoke  assets
+      invoke    scss
+   identical      app/assets/stylesheets/faculty_subjects.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+inside app/admin/attendances.rb
+current_user
+
+inside app/admin/attendances.rb
+current_user
+
+Running via Spring preloader in process 159859
+      invoke  active_record
+   identical    app/models/student_subject.rb
+      invoke    test_unit
+   identical      test/models/student_subject_test.rb
+   identical      test/fixtures/student_subjects.yml
+      invoke  resource_route
+       route    resources :student_subjects
+      invoke  scaffold_controller
+       force    app/controllers/student_subjects_controller.rb
+      invoke    erb
+       exist      app/views/student_subjects
+   identical      app/views/student_subjects/index.html.erb
+   identical      app/views/student_subjects/edit.html.erb
+   identical      app/views/student_subjects/show.html.erb
+   identical      app/views/student_subjects/new.html.erb
+   identical      app/views/student_subjects/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+   identical      test/controllers/student_subjects_controller_test.rb
+   identical      test/system/student_subjects_test.rb
+      invoke    helper
+   identical      app/helpers/student_subjects_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+   identical      app/views/student_subjects/index.json.jbuilder
+   identical      app/views/student_subjects/show.json.jbuilder
+   identical      app/views/student_subjects/_student_subject.json.jbuilder
+      invoke  assets
+      invoke    scss
+   identical      app/assets/stylesheets/student_subjects.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+inside app/admin/attendances.rb
+current_user
+
+inside app/admin/attendances.rb
+current_user
+
+Running via Spring preloader in process 159873
+      invoke  active_record
+   identical    app/models/subject.rb
+      invoke    test_unit
+   identical      test/models/subject_test.rb
+   identical      test/fixtures/subjects.yml
+      invoke  resource_route
+       route    resources :subjects
+      invoke  scaffold_controller
+       force    app/controllers/subjects_controller.rb
+      invoke    erb
+       exist      app/views/subjects
+   identical      app/views/subjects/index.html.erb
+   identical      app/views/subjects/edit.html.erb
+   identical      app/views/subjects/show.html.erb
+   identical      app/views/subjects/new.html.erb
+   identical      app/views/subjects/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+   identical      test/controllers/subjects_controller_test.rb
+   identical      test/system/subjects_test.rb
+      invoke    helper
+   identical      app/helpers/subjects_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+   identical      app/views/subjects/index.json.jbuilder
+   identical      app/views/subjects/show.json.jbuilder
+   identical      app/views/subjects/_subject.json.jbuilder
+      invoke  assets
+      invoke    scss
+   identical      app/assets/stylesheets/subjects.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+inside app/admin/attendances.rb
+current_user
+
+inside app/admin/attendances.rb
+current_user
+
+Running via Spring preloader in process 159888
+      invoke  active_record
+   identical    app/models/time_slot.rb
+      invoke    test_unit
+   identical      test/models/time_slot_test.rb
+   identical      test/fixtures/time_slots.yml
+      invoke  resource_route
+       route    resources :time_slots
+      invoke  scaffold_controller
+       force    app/controllers/time_slots_controller.rb
+      invoke    erb
+       exist      app/views/time_slots
+   identical      app/views/time_slots/index.html.erb
+   identical      app/views/time_slots/edit.html.erb
+   identical      app/views/time_slots/show.html.erb
+   identical      app/views/time_slots/new.html.erb
+   identical      app/views/time_slots/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+   identical      test/controllers/time_slots_controller_test.rb
+   identical      test/system/time_slots_test.rb
+      invoke    helper
+   identical      app/helpers/time_slots_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+   identical      app/views/time_slots/index.json.jbuilder
+   identical      app/views/time_slots/show.json.jbuilder
+   identical      app/views/time_slots/_time_slot.json.jbuilder
+      invoke  assets
+      invoke    scss
+   identical      app/assets/stylesheets/time_slots.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+inside app/admin/attendances.rb
+current_user
+
+inside app/admin/attendances.rb
+current_user
+
+Running via Spring preloader in process 159900
+      invoke  active_record
+   identical    app/models/timetable.rb
+      invoke    test_unit
+   identical      test/models/timetable_test.rb
+   identical      test/fixtures/timetables.yml
+      invoke  resource_route
+       route    resources :timetables
+      invoke  scaffold_controller
+       force    app/controllers/timetables_controller.rb
+      invoke    erb
+       exist      app/views/timetables
+   identical      app/views/timetables/index.html.erb
+   identical      app/views/timetables/edit.html.erb
+   identical      app/views/timetables/show.html.erb
+   identical      app/views/timetables/new.html.erb
+   identical      app/views/timetables/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+   identical      test/controllers/timetables_controller_test.rb
+   identical      test/system/timetables_test.rb
+      invoke    helper
+   identical      app/helpers/timetables_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+   identical      app/views/timetables/index.json.jbuilder
+   identical      app/views/timetables/show.json.jbuilder
+   identical      app/views/timetables/_timetable.json.jbuilder
+      invoke  assets
+      invoke    scss
+   identical      app/assets/stylesheets/timetables.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+[ask@yoga academic-app]$
+[ask@yoga academic-app]$ rails g scaffold Attendance date:date slot:integer faculty_id:integer subject_id:integer student_id:integer --skip-migration --force -c=scaffold_controller
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+inside app/admin/attendances.rb
+current_user
+
+Running via Spring preloader in process 159629
+      invoke  active_record
+       force    app/models/attendance.rb
+      invoke    test_unit
+   identical      test/models/attendance_test.rb
+       force      test/fixtures/attendances.yml
+      invoke  resource_route
+       route    resources :attendances
+      invoke  scaffold_controller
+       force    app/controllers/attendances_controller.rb
+      invoke    erb
+       exist      app/views/attendances
+       force      app/views/attendances/index.html.erb
+   identical      app/views/attendances/edit.html.erb
+   identical      app/views/attendances/show.html.erb
+   identical      app/views/attendances/new.html.erb
+   identical      app/views/attendances/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+   identical      test/controllers/attendances_controller_test.rb
+   identical      test/system/attendances_test.rb
+      invoke    helper
+   identical      app/helpers/attendances_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+   identical      app/views/attendances/index.json.jbuilder
+   identical      app/views/attendances/show.json.jbuilder
+   identical      app/views/attendances/_attendance.json.jbuilder
+      invoke  assets
+      invoke    scss
+   identical      app/assets/stylesheets/attendances.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+
+[ask@yoga academic-app]$ rails g scaffold User name:string email:string encrypted_password:string role:integer --skip-migration --force -c=scaffold_controller
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+inside app/admin/attendances.rb
+current_user
+
+inside app/admin/attendances.rb
+current_user
+
+Running via Spring preloader in process 160068
+      invoke  active_record
+       force    app/models/user.rb
+      invoke    test_unit
+   identical      test/models/user_test.rb
+   identical      test/fixtures/users.yml
+      invoke  resource_route
+       route    resources :users
+      invoke  scaffold_controller
+       force    app/controllers/users_controller.rb
+      invoke    erb
+       exist      app/views/users
+       force      app/views/users/index.html.erb
+       force      app/views/users/edit.html.erb
+       force      app/views/users/show.html.erb
+       force      app/views/users/new.html.erb
+       force      app/views/users/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+   identical      test/controllers/users_controller_test.rb
+   identical      test/system/users_test.rb
+      invoke    helper
+   identical      app/helpers/users_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+   identical      app/views/users/index.json.jbuilder
+   identical      app/views/users/show.json.jbuilder
+   identical      app/views/users/_user.json.jbuilder
+      invoke  assets
+      invoke    scss
+   identical      app/assets/stylesheets/users.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+
+
+[ask@yoga academic-app]$ rails g devise User --skip
+Warning: the running version of Bundler (2.2.27) is older than the version that created the lockfile (2.2.29). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.29`.
+Running via Spring preloader in process 166894
+      invoke  active_record
+        skip    db/migrate/20211124103201_add_devise_to_users.rb
+      insert    app/models/user.rb
+       route  devise_for :users
+
+25/11 cont...
+Listening codemy.com video now at 2.35
+User add not working
+
+[ask@yoga academic-app]$ git add . -v
+remove 'app/assets/stylesheets/scaffolds.scss'
+add 'app/controllers/attendances_controller.rb'
+add 'app/controllers/users/registrations_controller.rb'
+add 'app/controllers/users_controller.rb'
+add 'app/models/attendance.rb'
+add 'app/models/faculty_subject.rb'
+add 'app/models/student_subject.rb'
+add 'app/models/subject.rb'
+add 'app/models/timetable.rb'
+add 'app/models/user.rb'
+add 'app/views/academics/_header.html.erb'
+add 'app/views/academics/index.html.erb'
+add 'app/views/devise/registrations/edit.html.erb'
+add 'app/views/devise/registrations/new.html.erb'
+add 'app/views/devise/sessions/new.html.erb'
+add 'app/views/layouts/application.html.erb'
+add 'app/views/users/_form.html.erb'
+add 'app/views/users/edit.html.erb'
+add 'app/views/users/index.html.erb'
+add 'app/views/users/new.html.erb'
+add 'app/views/users/show.html.erb'
+add 'config/routes.rb'
+remove 'db/migrate/20211016170443_create_attendances.rb'
+add 'db/schema.rb'
+add 'model-generate.txt'
+add 'test/fixtures/attendances.yml'
+add 'test/fixtures/subjects.yml'
+add 'work.home.txt'
+add 'app/assets/stylesheets/attendances.scss'
+add 'app/assets/stylesheets/faculty_subjects.scss'
+add 'app/assets/stylesheets/scaffolds.scss.hide'
+add 'app/assets/stylesheets/student_subjects.scss'
+add 'app/assets/stylesheets/subjects.scss'
+add 'app/assets/stylesheets/time_slots.scss'
+add 'app/assets/stylesheets/timetables.scss'
+add 'app/controllers/faculty_subjects_controller.rb'
+add 'app/controllers/student_subjects_controller.rb'
+add 'app/controllers/subjects_controller.rb'
+add 'app/controllers/time_slots_controller.rb'
+add 'app/controllers/timetables_controller.rb'
+add 'app/helpers/attendances_helper.rb'
+add 'app/helpers/faculty_subjects_helper.rb'
+add 'app/helpers/student_subjects_helper.rb'
+add 'app/helpers/subjects_helper.rb'
+add 'app/helpers/time_slots_helper.rb'
+add 'app/helpers/timetables_helper.rb'
+add 'app/views/attendances/_attendance.json.jbuilder'
+add 'app/views/attendances/_form.html.erb'
+add 'app/views/attendances/edit.html.erb'
+add 'app/views/attendances/index.html.erb'
+add 'app/views/attendances/index.json.jbuilder'
+add 'app/views/attendances/new.html.erb'
+add 'app/views/attendances/show.html.erb'
+add 'app/views/attendances/show.json.jbuilder'
+add 'app/views/faculty_subjects/_faculty_subject.json.jbuilder'
+add 'app/views/faculty_subjects/_form.html.erb'
+add 'app/views/faculty_subjects/edit.html.erb'
+add 'app/views/faculty_subjects/index.html.erb'
+add 'app/views/faculty_subjects/index.json.jbuilder'
+add 'app/views/faculty_subjects/new.html.erb'
+add 'app/views/faculty_subjects/show.html.erb'
+add 'app/views/faculty_subjects/show.json.jbuilder'
+add 'app/views/student_subjects/_form.html.erb'
+add 'app/views/student_subjects/_student_subject.json.jbuilder'
+add 'app/views/student_subjects/edit.html.erb'
+add 'app/views/student_subjects/index.html.erb'
+add 'app/views/student_subjects/index.json.jbuilder'
+add 'app/views/student_subjects/new.html.erb'
+add 'app/views/student_subjects/show.html.erb'
+add 'app/views/student_subjects/show.json.jbuilder'
+add 'app/views/subjects/_form.html.erb'
+add 'app/views/subjects/_subject.json.jbuilder'
+add 'app/views/subjects/edit.html.erb'
+add 'app/views/subjects/index.html.erb'
+add 'app/views/subjects/index.json.jbuilder'
+add 'app/views/subjects/new.html.erb'
+add 'app/views/subjects/show.html.erb'
+add 'app/views/subjects/show.json.jbuilder'
+add 'app/views/time_slots/_form.html.erb'
+add 'app/views/time_slots/_time_slot.json.jbuilder'
+add 'app/views/time_slots/edit.html.erb'
+add 'app/views/time_slots/index.html.erb'
+add 'app/views/time_slots/index.json.jbuilder'
+add 'app/views/time_slots/new.html.erb'
+add 'app/views/time_slots/show.html.erb'
+add 'app/views/time_slots/show.json.jbuilder'
+add 'app/views/timetables/_form.html.erb'
+add 'app/views/timetables/_timetable.json.jbuilder'
+add 'app/views/timetables/edit.html.erb'
+add 'app/views/timetables/index.html.erb'
+add 'app/views/timetables/index.json.jbuilder'
+add 'app/views/timetables/new.html.erb'
+add 'app/views/timetables/show.html.erb'
+add 'app/views/timetables/show.json.jbuilder'
+add 'db/migrate/20211123141222_attendance_change.rb'
+add 'test/controllers/attendances_controller_test.rb'
+add 'test/controllers/faculty_subjects_controller_test.rb'
+add 'test/controllers/student_subjects_controller_test.rb'
+add 'test/controllers/subjects_controller_test.rb'
+add 'test/controllers/time_slots_controller_test.rb'
+add 'test/controllers/timetables_controller_test.rb'
+add 'test/system/attendances_test.rb'
+add 'test/system/faculty_subjects_test.rb'
+add 'test/system/student_subjects_test.rb'
+add 'test/system/subjects_test.rb'
+add 'test/system/time_slots_test.rb'
+add 'test/system/timetables_test.rb'
+[ask@yoga academic-app]$
