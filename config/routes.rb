@@ -38,6 +38,9 @@ Rails.application.routes.draw do
 
   #resources :user_session
   #get "/signin" => "sessions#new", as: :new_sessions
+
+  get "attendances/mark_all" => "attendances#mark_all"
+
   resources :users
   resources :academics
   #ActiveAdmin.routes(self)

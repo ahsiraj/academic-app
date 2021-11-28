@@ -34,7 +34,7 @@
       <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to 'Add User', new_user_path, class:"nav-link" %>
-          <%#app/viws/users/new.html.erb%>
+          <%#app/views/users/new.html.erb%>
         </li>
         <li class="nav-item">
           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"nav-link" %>

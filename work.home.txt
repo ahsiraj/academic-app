@@ -888,3 +888,23 @@ add 'test/system/subjects_test.rb'
 add 'test/system/time_slots_test.rb'
 add 'test/system/timetables_test.rb'
 [ask@yoga academic-app]$
+
+
+26/11
+http://127.0.0.1:3000/attendances
+New Attendance
+1 error prohibited this attendance from being saved:
+
+    User must exist
+
+    Edited models/attendance.rb with  :optional => true
+belongs_to :user, :optional => true
+may be a short cut solution?
+
+
+------------
+assiciation via faculty_id
+ app/models/user.rb
+  has_many :attendances, foreign_key: :faculty_id, inverse_of: :user
+app/models/attendance.rb
+ belongs_to :user, foreign_key: :faculty_id, inverse_of: :attendances, :optional => true

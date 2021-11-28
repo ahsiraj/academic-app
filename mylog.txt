@@ -7,7 +7,7 @@ Gemfile edited to include gem "activeadmin"
 $ bundle update # may be bundle install better
 $ rails g active_admin:install
 ------>devise error
-$ bundle add devise
+$ bundle add devisehttps://stackoverflow.com/questions/24479839/multiple-types-of-users-on-ruby-on-rails/24480937
 $ rails g active_admin:install User
 Running via Spring preloader in process 90441
       invoke  devise

@@ -1,6 +1,10 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: %i[ show edit update destroy ]
 
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  #26/11^
+
   # GET /attendances or /attendances.json
   def index
     @attendances = Attendance.all
@@ -12,7 +16,17 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/new
   def new
-    @attendance = Attendance.new
+    # @attendance = Attendance.new
+    #26/11^v
+    @attendance = current_user.attendances.build
+  end
+
+  # Mark from students list 27/11
+
+  def mark_all
+    #render html: "Testing from app/controllers/attendances_controller.rb#mark"
+    # Look in views/attendances/mark.html.erb for the view part
+    @students = User.student
   end
 
   # GET /attendances/1/edit
@@ -21,7 +35,8 @@ class AttendancesController < ApplicationController
 
   # POST /attendances or /attendances.json
   def create
-    @attendance = Attendance.new(attendance_params)
+    #@attendance = Attendance.new(attendance_params)
+    @attendance = current_user.attendances.build(attendance_params)
 
     respond_to do |format|
       if @attendance.save
@@ -56,14 +71,20 @@ class AttendancesController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_attendance
-      @attendance = Attendance.find(params[:id])
-    end
+  def correct_user #26/11
+    @attendance = current_user.attendances.find_by(id: params[:id])
+    redirect_to attendances_path, notice: "Not authorised to edit this attendance" if @attendance.nil?
+  end
 
-    # Only allow a list of trusted parameters through.
-    def attendance_params
-      params.require(:attendance).permit(:date, :slot, :faculty_id, :subject_id, :student_id)
-    end
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_attendance
+    @attendance = Attendance.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def attendance_params
+    params.require(:attendance).permit(:date, :slot, :faculty_id, :subject_id, :student_id)
+  end
 end
