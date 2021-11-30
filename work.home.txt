@@ -903,7 +903,7 @@ may be a short cut solution?
 
 
 ------------
-assiciation via faculty_id
+association via faculty_id
  app/models/user.rb
   has_many :attendances, foreign_key: :faculty_id, inverse_of: :user
 app/models/attendance.rb

@@ -13,42 +13,31 @@
     </tr>
   </thead>
   <tbody>
+
+
+
     <% @students.each do |student| %>
-      <tr>
+    <tr>
         <td><%= student.id %></td>
         <td><%= student.name %></td>
         <td><%= student.email %></td>
         <td><%= student.role %></td>
-        <%# att = Attendance.new(date: Date.today(), slot: 2, faculty_id: current_user.id, subject_id: 2, student_id: student.id) %>
+        <% att = Attendance.new(date: Date.today(), slot: 2, faculty_id: current_user.id, subject_id: 2, student_id: student.id) %>
         <%#att.save%>
         <td><%#= att.student_id %></td>
-        <td><%#= check_box_tag 'present' %></td>
-        <td><%= check_box :att, :present %></td>
-        <td><%= att.present?%></td>
+        <td><%= check_box_tag 'present' %></td>
+        <td><%#= check_box :att, :present %></td>
+        <td><%#= att.present?%></td>
         <%#= check_box_tag 'receive_email', 'no',false, class: "name" %>
         <%#= check_box :student, :%>
-        <%= form_with url: attendances_path do |form| %>
-          <div >
-            <%= form.text_field :first_name %>
-          </div>
-          <div class = "Form-section">
-            <p class="FormInput-label">Last Name: </p>
-            <%= form.text_field :last_name %>
-          </div>
-          <div class = "Form-section">
-            <p class="FormInput-label">email: </p>
-            <%= form.email_field :email %>
-          </div>
-          <div class = "Form-section">
-            <p class="FormInput-label">password: </p>
-            <%= form.password_field :password %>
-          </div>
-          <div class = "Form-section">
-            <%= form.submit "Sign-up!", class: "Form-submit" %>
-          </div>
-        <% end %>
+
+
       </tr>
     <% end %>
+<% [*1..5].each do |i| %>
+ <%= check_box_tag 'these_ids[]', i %>
+<% end %>
+
   </tbody>
 </table>
 <br>

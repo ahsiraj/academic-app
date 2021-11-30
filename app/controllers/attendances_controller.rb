@@ -27,6 +27,12 @@ class AttendancesController < ApplicationController
     #render html: "Testing from app/controllers/attendances_controller.rb#mark"
     # Look in views/attendances/mark.html.erb for the view part
     @students = User.student
+    if params[:pre] == true
+      puts "present--------------------------------------------------------------------"
+    else
+      puts "absent--------------------------------------------------------------------"
+    end
+    puts params[:these_ids[1]]
   end
 
   # GET /attendances/1/edit

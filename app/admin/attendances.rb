@@ -8,8 +8,8 @@ ActiveAdmin.register Attendance do
   #V
   puts "inside app/admin/attendances.rb" #  puts ok
   #puts current_user.id #not available
-  puts :current_user
-  puts @current_user
+  #puts :current_user
+  #puts @current_user
   permit_params :date, :slot, :faculty_subject_id, :student_id
   index do
     column :id
